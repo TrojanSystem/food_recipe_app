@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'dictionary_hub.dart';
 import 'dictionary_main_screen.dart';
+import 'food_main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,12 +18,12 @@ class MyApp extends StatelessWidget {
 
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-        title: 'Dictionary',
+        title: 'Food Recipe',
         theme: ThemeData(
 
           primarySwatch: Colors.blue,
         ),
-        home:  ApiIntegration(),
+        home:   FoodMainScreen(),
       );
 
   }

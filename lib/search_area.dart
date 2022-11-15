@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-class SearchArea extends StatelessWidget {
-  const SearchArea({
-    Key? key,
-    required TextEditingController searchedWord,
-  }) : _searchedWord = searchedWord, super(key: key);
 
-  final TextEditingController _searchedWord;
+class SearchArea extends StatelessWidget {
+  SearchArea({
+    required this.searchedWord,
+  });
+
+  final TextEditingController searchedWord;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(right: 30.0),
-      width: MediaQuery.of(context).size.width * 0.75,
+      margin: const EdgeInsets.only(left: 20.0),
+      width: MediaQuery.of(context).size.width * 0.9,
       child: Form(
-        child:  Padding(
+        child: Padding(
           padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
           child: TextFormField(
-            controller: _searchedWord,
+            controller: searchedWord,
             validator: (value) {
               if (value == null) {
                 return 'search can\'t be empty';
@@ -25,12 +25,15 @@ class SearchArea extends StatelessWidget {
               }
             },
             onSaved: (value) {
-              _searchedWord.text = value!;
+              searchedWord.text = value!;
             },
             decoration: InputDecoration(
-              hintText: 'Search a word..',
+              prefixIcon: const Icon(
+                Icons.search,
+              ),
+              hintText: 'Search...',
               filled: true,
-              fillColor: Colors.white,
+              fillColor: Colors.grey[200],
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide.none,
                 borderRadius: BorderRadius.circular(10),
