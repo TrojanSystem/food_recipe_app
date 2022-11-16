@@ -114,7 +114,7 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
                             ],
                           ),
                           child: Container(
-                            height: w * 0.37,
+                            height: w * 0.26,
                             color: Colors.white,
                             margin: const EdgeInsets.all(8),
                             child: Row(
@@ -142,6 +142,12 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
+                                        foodList[index].displayName,
+                                        style: const TextStyle(
+                                            overflow: TextOverflow.ellipsis,
+                                            fontWeight: FontWeight.w900,
+                                            fontSize: 20),
+                                      ),Text(
                                         foodList[index].displayName,
                                         style: const TextStyle(
                                             overflow: TextOverflow.ellipsis,
