@@ -1,12 +1,13 @@
-import 'package:dictionary/food_data_provider.dart';
-import 'package:dictionary/popular_recipes.dart';
-import 'package:dictionary/search_area.dart';
-import 'package:dictionary/word_model.dart';
+import 'package:dictionary/data/food_data_provider.dart';
+
+import 'package:dictionary/main_screen/search_area.dart';
+import 'package:dictionary/data/word_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
 
 import 'bottom_food_list.dart';
+import 'popular_recipes.dart';
 
 class FoodMainScreen extends StatefulWidget {
   FoodMainScreen({Key? key}) : super(key: key);
@@ -19,24 +20,7 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
   final TextEditingController searchWord = TextEditingController();
   final FocusNode searchWordNode = FocusNode();
 
-  bool _isLoading = false;
 
-  getFood() async {
-    setState(() {
-      _isLoading = false;
-    });
-    //foodLists = await FoodDataProvider.foodProvider();
-    setState(() {
-      _isLoading = true;
-    });
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    getFood();
-  }
 
   @override
   void dispose() {

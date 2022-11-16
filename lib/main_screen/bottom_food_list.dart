@@ -1,8 +1,8 @@
-import 'package:dictionary/word_model.dart';
+import 'package:dictionary/data/word_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
-import 'food_detail.dart';
+import '../food_details/food_detail.dart';
 
 class BottomFoodList extends StatelessWidget {
   const BottomFoodList({

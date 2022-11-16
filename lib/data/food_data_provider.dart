@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:dictionary/word_model.dart';
+import 'package:dictionary/data/word_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 

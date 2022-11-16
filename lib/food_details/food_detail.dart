@@ -1,8 +1,9 @@
-import 'package:dictionary/word_model.dart';
+import 'package:dictionary/data/word_model.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'cooking_details.dart';
+
 import 'ingredients.dart';
 import 'nutrition.dart';
 

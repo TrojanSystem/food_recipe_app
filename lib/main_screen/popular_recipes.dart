@@ -1,7 +1,8 @@
-import 'package:dictionary/word_model.dart';
+import 'package:dictionary/data/word_model.dart';
 import 'package:flutter/material.dart';
 
-import 'food_detail.dart';
+import '../food_details/food_detail.dart';
+
 
 class PopularRecipes extends StatelessWidget {
   const PopularRecipes({

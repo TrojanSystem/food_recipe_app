@@ -1,10 +1,9 @@
-import 'package:dictionary/food_data_provider.dart';
+import 'package:dictionary/data/food_data_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'dictionary_hub.dart';
-import 'dictionary_main_screen.dart';
-import 'food_main_screen.dart';
+
+import 'main_screen/food_main_screen.dart';
 
 void main() {
   runApp(const MyApp());
