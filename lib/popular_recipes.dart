@@ -98,11 +98,36 @@ class PopularRecipes extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(foodList[index].totalTime),
+                                Row(
+                                  children: [  Container(
+                                    width: 8,
+                                    height: 8,
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.red,
+                                    ),
+                                  ),
+                                    SizedBox(width: 5,),
+                                    Text(foodList[index].totalTime),
+                                  ],
+                                ),
                                 const SizedBox(
                                   width: 10,
                                 ),
-                                Text(foodList[index].defficulty),
+                                Row(
+                                  children: [
+                                    Container(
+                                      width: 8,
+                                      height: 8,
+                                      decoration: const BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                    SizedBox(width: 5,),
+                                    Text(foodList[index].defficulty),
+                                  ],
+                                ),
                               ],
                             ),
                           ),
