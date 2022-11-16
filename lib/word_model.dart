@@ -1,36 +1,32 @@
-// class WordModel {
-//   String name;
-//   double rating;
-//   String totalTime;
-//   String images;
-//
-//   WordModel(
-//       {required this.images,
-//       required this.name,
-//       required this.rating,
-//       required this.totalTime});
-//
-//   Map<String, dynamic> toMap() {
-//     return {
-//       'name': name,
-//       'rating': rating,
-//       'totalTime': totalTime,
-//       'images': images,
-//     };
-//   }
-//
-//   static WordModel fromMap(Map<String, dynamic> map) {
-//     return WordModel(
-//       name: map['name'],
-//       rating: map['rating'],
-//       totalTime: map['totalTime'],
-//       images: map['images'],
-//
-//       // checked: map['checked'],
-//     );
-//   }
-//
-//   static List<WordModel> recipesFromSnapshot(List snapshot) {
-//     return snapshot.map((e) => WordModel.fromMap(e)).toList();
-//   }
-// }
+class FoodModel {
+  String videoUrls;
+  String discription;
+  String defficulty;
+  String displayName;
+  double rating;
+  String totalTime;
+  String category;
+  String hostedLargeUrl;
+  Map preparationSteps;
+  String course;
+  Map nutrition;
+  List ingredient;
+
+
+  //var images;
+
+  FoodModel(
+      {required this.hostedLargeUrl,
+      required this.nutrition,
+      required this.ingredient,
+      required this.defficulty,
+      required this.discription,
+      required this.videoUrls,
+      required this.course,
+      required this.category,
+      required this.preparationSteps,
+      //required this.images,
+      required this.displayName,
+      required this.rating,
+      required this.totalTime});
+}

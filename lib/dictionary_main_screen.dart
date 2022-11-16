@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ApiIntegration extends StatelessWidget {
   ApiIntegration({Key? key}) : super(key: key);
 
-  data() async {
+  foodProvider() async {
     var response = await http.get(
         Uri.parse(
             'https://yummly2.p.rapidapi.com/feeds/list'),
@@ -16,7 +16,7 @@ class ApiIntegration extends StatelessWidget {
         });
 
     var data = jsonDecode(response.body);
-    print(data['feed'][0]['content']['details']['rating']);
+
   }
 
   @override
@@ -25,7 +25,7 @@ class ApiIntegration extends StatelessWidget {
       appBar: AppBar(),
       body: Center(
           child: IconButton(
-        onPressed: data,
+        onPressed: foodProvider,
         icon: Icon(Icons.data_array_sharp),
       )),
     );
