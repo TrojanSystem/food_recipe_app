@@ -83,7 +83,8 @@ class PopularRecipes extends StatelessWidget {
                             ),
                             Text(
                               '${popularRecipes[index].rating}',
-                              style: const TextStyle(fontWeight: FontWeight.w900),
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.w900),
                             )
                           ],
                         ),

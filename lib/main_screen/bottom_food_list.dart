@@ -1,4 +1,5 @@
 import 'package:dictionary/data/food_model.dart';
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
@@ -35,10 +36,13 @@ class BottomFoodList extends StatelessWidget {
               child: FadeInAnimation(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
                         builder: (ctx) => FoodDetail(
-                              detailData: foodList[index],
-                            )));
+                          detailData: foodList[index],
+                        ),
+                      ),
+                    );
                   },
                   child: Container(
                     margin: EdgeInsets.only(
@@ -65,9 +69,13 @@ class BottomFoodList extends StatelessWidget {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(10),
                               clipBehavior: Clip.antiAlias,
-                              child: Image.network(
-                                foodList[index].hostedLargeUrl,
-                                fit: BoxFit.contain,
+                              child: FancyShimmerImage(
+                                imageUrl: foodList[index].hostedLargeUrl,
+                                errorWidget: Image.network(
+                                    'https://i0.wp.com/www.dobitaobyte.com.br/wp-content/uploads/2016/02/no_image.png?ssl=1'),
+                                shimmerBaseColor: Colors.greenAccent,
+                                shimmerHighlightColor: Colors.grey,
+                                shimmerBackColor: Colors.greenAccent,
                               ),
                             ),
                           ),
