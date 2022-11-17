@@ -23,9 +23,10 @@ class FilterFood extends StatelessWidget {
         .toList();
     return Scaffold(
       appBar: AppBar(
-      iconTheme: Theme.of(context).iconTheme,
+        iconTheme: Theme.of(context).iconTheme,
         elevation: 0,
-        backgroundColor: Colors.white,
+        title: Text('$filteringQuery Food',style: const TextStyle(color: Colors.black,),),
+        backgroundColor: Colors.white,centerTitle: true,
       ),
       body: AnimationLimiter(
         child: ListView.builder(
