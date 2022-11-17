@@ -19,14 +19,15 @@ class FoodDetail extends StatefulWidget {
 
 class _FoodDetailState extends State<FoodDetail> {
   bool _isLiked = false;
+
   Future<void> share() async {
     await FlutterShare.share(
         title: 'Example share',
         text: 'Example share text',
         linkUrl: 'https://flutter.dev/',
-        chooserTitle: 'Example Chooser Title'
-    );
+        chooserTitle: 'Example Chooser Title');
   }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -81,7 +82,7 @@ class _FoodDetailState extends State<FoodDetail> {
                                   ),
                                 ),
                                 IconButton(
-                                  onPressed:share,
+                                  onPressed: share,
                                   icon: Icon(
                                     Icons.share_outlined,
                                     size: 30,
@@ -163,17 +164,20 @@ class _FoodDetailState extends State<FoodDetail> {
               ),
             ),
             Positioned(
-              top: 20,
+              top: 25,
               right: 20,
               child: IconButton(
                 onPressed: () {
-                  setState(() {
-                    _isLiked = !_isLiked;
-                  });
+                  setState(
+                    () {
+                      _isLiked = !_isLiked;
+                    },
+                  );
                 },
                 icon: Icon(
                   _isLiked ? Icons.favorite_border_outlined : Icons.favorite,
-                  color: _isLiked ? Colors.white : Colors.amber,
+                  color: _isLiked ? Colors.green[800] : Colors.green[800],
+                  size: 35,
                 ),
               ),
             )

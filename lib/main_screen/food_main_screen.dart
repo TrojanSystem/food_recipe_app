@@ -4,6 +4,7 @@ import 'package:dictionary/main_screen/search_area.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../food_drawer.dart';
 import 'bottom_food_list.dart';
 import 'popular_recipes.dart';
 
@@ -35,6 +36,7 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
     final foodList = Provider.of<FoodDataProvider>(context).foodListData;
     return Scaffold(
       appBar: AppBar(
+        iconTheme: Theme.of(context).iconTheme,
         backgroundColor: Colors.white,
         elevation: 0,
       ),
@@ -48,7 +50,7 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
                 const Padding(
                   padding: EdgeInsets.only(left: 10),
                   child: Text(
-                    'Cook at home like a chef',
+                    'Cook at home like a chief',
                     style: TextStyle(
                       fontWeight: FontWeight.w900,
                       fontSize: 25,
@@ -72,6 +74,7 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
           ),
         ],
       ),
+      drawer: FoodDrawer(),
     );
   }
 }

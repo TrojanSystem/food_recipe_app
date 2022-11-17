@@ -1,8 +1,8 @@
 import 'package:dictionary/data/food_model.dart';
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 
 import '../food_details/food_detail.dart';
-
 
 class PopularRecipes extends StatelessWidget {
   const PopularRecipes({
@@ -47,16 +47,19 @@ class PopularRecipes extends StatelessWidget {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(foodList[index].hostedLargeUrl),
-                          fit: BoxFit.fitHeight,
-                        ),
-                        color: Colors.red,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       margin: const EdgeInsets.all(6),
                       width: 180,
                       height: MediaQuery.of(context).size.height,
+                      child: FancyShimmerImage(
+                        imageUrl: foodList[index].hostedLargeUrl,
+                        errorWidget: Image.network(
+                            'https://i0.wp.com/www.dobitaobyte.com.br/wp-content/uploads/2016/02/no_image.png?ssl=1'),
+                        shimmerBaseColor: Colors.greenAccent,
+                        shimmerHighlightColor: Colors.grey,
+                        shimmerBackColor: Colors.greenAccent,
+                      ),
                     ),
                     Positioned(
                       top: 15,
