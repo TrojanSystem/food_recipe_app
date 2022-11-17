@@ -11,7 +11,7 @@ class Ingredients extends StatelessWidget {
       itemCount: 5,
       itemBuilder: (context, index) {
         return Container(
-          margin: const EdgeInsets.fromLTRB(5,0,5,0),
+          margin: const EdgeInsets.fromLTRB(5, 0, 5, 0),
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 0.18,
           child: Row(
@@ -29,7 +29,7 @@ class Ingredients extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    '${ingredients.ingredient[index]['unit']}',
+                    '${ingredients.ingredient[index]['unit'] == 'teaspoon' ? 'tsp' : ingredients.ingredient[index]['unit']}',
                     textAlign: TextAlign.start,
                     style: const TextStyle(
                         color: Colors.white,
@@ -53,7 +53,7 @@ class Ingredients extends StatelessWidget {
                       padding: const EdgeInsets.fromLTRB(0, 4.0, 8, 4),
                       child: Text(
                         '${ingredients.ingredient[index]['ingredient']}',
-                        style:const TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.w900, fontSize: 17),
                       ),
                     ),
