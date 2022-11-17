@@ -74,7 +74,7 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
           ),
         ],
       ),
-      drawer: FoodDrawer(),
+      drawer: FoodDrawer(dataToBeFilter: foodList),
     );
   }
 }

@@ -5,8 +5,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../food_details/filtered_food.dart';
 
 class FoodDrawer extends StatelessWidget {
-  FoodDrawer({Key? key}) : super(key: key);
+  FoodDrawer({super.key, required this.dataToBeFilter});
+
   int checkIsIncome = 0;
+  List dataToBeFilter;
 
   @override
   Widget build(BuildContext context) {
@@ -24,41 +26,61 @@ class FoodDrawer extends StatelessWidget {
         foodFilter(
           title: 'High Protein',
           filteredFood: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (ctx) => const FilterFood(),
-              ),
-            );
+            checkIsIncome == 1
+                ? Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) => FilterFood(
+                        filteringQuery: 'High Protein',
+                        foodList: dataToBeFilter,
+                      ),
+                    ),
+                  )
+                : Navigator.pop(context);
           },
         ),
         foodFilter(
           title: 'Low Carb',
           filteredFood: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (ctx) => const FilterFood(),
-              ),
-            );
+            checkIsIncome == 1
+                ? Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) => FilterFood(
+                        filteringQuery: 'Low Carb',
+                        foodList: dataToBeFilter,
+                      ),
+                    ),
+                  )
+                :  Navigator.pop(context) ;
           },
         ),
         foodFilter(
           title: 'Low Fat',
           filteredFood: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (ctx) => const FilterFood(),
-              ),
-            );
+            checkIsIncome == 1
+                ? Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) => FilterFood(
+                        filteringQuery: 'Low Fat',
+                        foodList: dataToBeFilter,
+                      ),
+                    ),
+                  )
+                : Navigator.pop(context);
           },
         ),
         foodFilter(
           title: 'High Calorie',
           filteredFood: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (ctx) => const FilterFood(),
-              ),
-            );
+            checkIsIncome == 1
+                ? Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) => FilterFood(
+                        filteringQuery: 'High Calorie',
+                        foodList: dataToBeFilter,
+                      ),
+                    ),
+                  )
+                : Navigator.pop(context);
           },
         )
       ]),
