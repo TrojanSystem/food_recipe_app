@@ -11,9 +11,9 @@ class Ingredients extends StatelessWidget {
       itemCount: 5,
       itemBuilder: (context, index) {
         return Container(
-          margin: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+          margin: const EdgeInsets.all(8),
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height * 0.18,
+          height: MediaQuery.of(context).size.height * 0.14,
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -27,59 +27,54 @@ class Ingredients extends StatelessWidget {
                     bottomLeft: Radius.circular(10),
                   ),
                 ),
-                child: Center(
-                  child: Text(
-                    '${ingredients.ingredient[index]['unit'] == 'teaspoon' ? 'tsp' : ingredients.ingredient[index]['unit']}',
-                    textAlign: TextAlign.start,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  height: MediaQuery.of(context).size.height * 0.15,
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(color: Colors.black),
-                      top: BorderSide(color: Colors.black),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '${ingredients.ingredient[index]['unit'] == 'teaspoon' ? 'tsp' : ingredients.ingredient[index]['unit']}',
+                      textAlign: TextAlign.start,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
                     ),
-                    color: Colors.white,
-                  ),
-                  child: ListTile(
-                    title: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 4.0, 8, 4),
-                      child: Text(
-                        '${ingredients.ingredient[index]['ingredient']}',
-                        style: const TextStyle(
-                            fontWeight: FontWeight.w900, fontSize: 17),
-                      ),
+                    const SizedBox(
+                      height: 5,
                     ),
-                    subtitle:
-                        Text('${ingredients.ingredient[index]['wholeLine']}'),
-                  ),
+                    Text(
+                      'x ${ingredients.ingredient[index]['quantity']}',
+                      textAlign: TextAlign.start,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),
+                  ],
                 ),
               ),
               Container(
-                width: 85,
                 height: MediaQuery.of(context).size.height * 0.15,
-                decoration: BoxDecoration(
-                  color: Colors.blue[800],
-                  borderRadius: const BorderRadius.only(
-                    topRight: Radius.circular(10),
-                    bottomRight: Radius.circular(10),
+                width: MediaQuery.of(context).size.width * 0.72,
+                decoration: const BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(color: Colors.black),
+                    top: BorderSide(color: Colors.black),
+                    right: BorderSide(color: Colors.black),
                   ),
+                  color: Colors.white,
                 ),
-                child: Center(
-                  child: Text(
-                    'x ${ingredients.ingredient[index]['quantity']}',
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
+                child: ListTile(
+                  title: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 4.0, 8, 4),
+                    child: Text(
+                      '${ingredients.ingredient[index]['ingredient']}',
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w900, fontSize: 17),
+                    ),
                   ),
+                  subtitle:
+                      Text('${ingredients.ingredient[index]['wholeLine']}'),
                 ),
               ),
             ],
