@@ -33,7 +33,7 @@ class PopularRecipes extends StatelessWidget {
           ),
         ),
         Expanded(
-          flex: 12,
+          flex: 6,
           child: ListView.builder(
             itemCount: popularRecipes.length,
             scrollDirection: Axis.horizontal,

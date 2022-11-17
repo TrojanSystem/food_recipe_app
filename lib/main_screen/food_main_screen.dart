@@ -40,39 +40,46 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Text(
-                    'Cook at home like a chief',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w900,
-                      fontSize: 25,
+      body: SingleChildScrollView(
+
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height*0.92,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Text(
+                        'Cook at home like a chief',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 25,
+                        ),
+                      ),
                     ),
-                  ),
+                    SearchArea(
+                      searchedWord: searchWord,
+                    )
+                  ],
                 ),
-                SearchArea(
-                  searchedWord: searchWord,
-                )
-              ],
-            ),
+              ),
+              Expanded(
+                flex: 2,
+                child: PopularRecipes(popularFoodList: foodList),
+              ),
+              Expanded(
+                flex: 3,
+                child: BottomFoodList(
+                    w: w, columnCount: columnCount, foodList: foodList),
+              ),
+            ],
           ),
-          Expanded(
-            flex: 2,
-            child: PopularRecipes(popularFoodList: foodList),
-          ),
-          Expanded(
-            flex: 2,
-            child: BottomFoodList(
-                w: w, columnCount: columnCount, foodList: foodList),
-          ),
-        ],
+        ),
       ),
       drawer: FoodDrawer(dataToBeFilter: foodList),
     );
