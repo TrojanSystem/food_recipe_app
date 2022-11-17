@@ -65,7 +65,7 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
           ),
           Expanded(
             flex: 2,
-            child: PopularRecipes(foodList: foodList),
+            child: PopularRecipes(popularFoodList: foodList),
           ),
           Expanded(
             flex: 2,

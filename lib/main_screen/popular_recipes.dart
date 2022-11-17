@@ -7,13 +7,16 @@ import '../food_details/food_detail.dart';
 class PopularRecipes extends StatelessWidget {
   const PopularRecipes({
     Key? key,
-    required this.foodList,
+    required this.popularFoodList,
   }) : super(key: key);
 
-  final List<FoodModel> foodList;
+  final List<FoodModel> popularFoodList;
 
   @override
   Widget build(BuildContext context) {
+    final popularRecipes =
+        popularFoodList.where((element) => element.rating >= 4.0).toList();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -32,14 +35,15 @@ class PopularRecipes extends StatelessWidget {
         Expanded(
           flex: 12,
           child: ListView.builder(
-            itemCount: foodList.length,
+            itemCount: popularRecipes.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (ctx) => FoodDetail(detailData: foodList[index]),
+                      builder: (ctx) =>
+                          FoodDetail(detailData: popularRecipes[index]),
                     ),
                   );
                 },
@@ -53,7 +57,7 @@ class PopularRecipes extends StatelessWidget {
                       width: 180,
                       height: MediaQuery.of(context).size.height,
                       child: FancyShimmerImage(
-                        imageUrl: foodList[index].hostedLargeUrl,
+                        imageUrl: popularRecipes[index].hostedLargeUrl,
                         errorWidget: Image.network(
                             'https://i0.wp.com/www.dobitaobyte.com.br/wp-content/uploads/2016/02/no_image.png?ssl=1'),
                         shimmerBaseColor: Colors.greenAccent,
@@ -72,14 +76,14 @@ class PopularRecipes extends StatelessWidget {
                         height: 35,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: const [
-                            Icon(
+                          children: [
+                            const Icon(
                               Icons.star,
                               color: Colors.amber,
                             ),
                             Text(
-                              '4.9',
-                              style: TextStyle(fontWeight: FontWeight.w900),
+                              '${popularRecipes[index].rating}',
+                              style: const TextStyle(fontWeight: FontWeight.w900),
                             )
                           ],
                         ),
@@ -101,7 +105,7 @@ class PopularRecipes extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Text(
-                                foodList[index].displayName,
+                                popularRecipes[index].displayName,
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
@@ -125,7 +129,7 @@ class PopularRecipes extends StatelessWidget {
                                       const SizedBox(
                                         width: 5,
                                       ),
-                                      Text(foodList[index].totalTime),
+                                      Text(popularRecipes[index].totalTime),
                                     ],
                                   ),
                                   const SizedBox(
@@ -144,7 +148,7 @@ class PopularRecipes extends StatelessWidget {
                                       const SizedBox(
                                         width: 5,
                                       ),
-                                      Text(foodList[index].defficulty),
+                                      Text(popularRecipes[index].defficulty),
                                     ],
                                   ),
                                 ],
