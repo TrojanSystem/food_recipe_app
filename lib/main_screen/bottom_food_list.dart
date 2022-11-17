@@ -110,7 +110,10 @@ class BottomFoodList extends StatelessWidget {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      const Icon(Icons.access_time),
+                                      const Icon(
+                                        Icons.access_time,
+                                        color: Colors.red,
+                                      ),
                                       const SizedBox(
                                         width: 10,
                                       ),
@@ -118,7 +121,10 @@ class BottomFoodList extends StatelessWidget {
                                       const SizedBox(
                                         width: 20,
                                       ),
-                                      const Icon(Icons.emoji_emotions_outlined),
+                                      const Icon(
+                                        Icons.emoji_emotions_outlined,
+                                        color: Colors.green,
+                                      ),
                                       const SizedBox(
                                         width: 10,
                                       ),
