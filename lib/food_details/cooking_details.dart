@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class CookingDetails extends StatefulWidget {
-  const CookingDetails({required this.cookingDetails});
+  const CookingDetails({super.key, required this.cookingDetails});
 
   final FoodModel cookingDetails;
 
@@ -60,8 +60,6 @@ class _CookingDetailsState extends State<CookingDetails> {
                     child: IconButton(
                       onPressed: () {
                         howToCookVideo(context);
-                        // Navigator.of(context).push(MaterialPageRoute(
-                        //     builder: (ctx) => const VideoPlayerScreen()));
                       },
                       icon: const Icon(
                         Icons.play_circle,
@@ -124,17 +122,17 @@ class _CookingDetailsState extends State<CookingDetails> {
   }
 
   void howToCookVideo(BuildContext context) {
-     showDialog(
+    showDialog(
       context: context,
       builder: (context) {
         return StatefulBuilder(
           builder: (context, setState) => AlertDialog(
-            title: const Text('How to...'),backgroundColor: Colors.transparent,
+            title: const Text('How to...'),
+            backgroundColor: Colors.transparent,
             actions: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                height:
-                    MediaQuery.of(context).size.height * 0.3,
+                height: MediaQuery.of(context).size.height * 0.3,
                 decoration: BoxDecoration(
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(15),
@@ -144,17 +142,14 @@ class _CookingDetailsState extends State<CookingDetails> {
                     FutureBuilder(
                       future: _initializeVideoPlayerFuture,
                       builder: (context, snapshot) {
-                        if (snapshot.connectionState ==
-                            ConnectionState.done) {
+                        if (snapshot.connectionState == ConnectionState.done) {
                           return AspectRatio(
-                            aspectRatio:
-                                _controller.value.aspectRatio,
+                            aspectRatio: _controller.value.aspectRatio,
                             child: VideoPlayer(_controller),
                           );
                         } else {
                           return const Center(
-                              child:
-                                  CircularProgressIndicator());
+                              child: CircularProgressIndicator());
                         }
                       },
                     ),

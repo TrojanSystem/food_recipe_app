@@ -4,7 +4,7 @@ import 'package:dictionary/main_screen/search_area.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../food_drawer.dart';
+import 'food_drawer.dart';
 import 'bottom_food_list.dart';
 import 'popular_recipes.dart';
 
