@@ -1,4 +1,4 @@
-import 'package:dictionary/data/word_model.dart';
+import 'package:dictionary/data/food_model.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +25,7 @@ class _FoodDetailState extends State<FoodDetail> {
       length: 3,
       initialIndex: 0,
       child: Scaffold(
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Colors.white,
         body: Stack(
           children: [
             Column(
@@ -53,7 +53,7 @@ class _FoodDetailState extends State<FoodDetail> {
                               color: Colors.white,
                               border: Border(
                                 bottom: BorderSide(
-                                  color: Colors.grey,
+                                  color: Color.fromRGBO(224, 224, 224, 1),
                                   width: 2,
                                 ),
                               ),
@@ -62,7 +62,7 @@ class _FoodDetailState extends State<FoodDetail> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(left: 0.0),
+                                  padding: const EdgeInsets.only(left: 5.0),
                                   child: Text(
                                     widget.detailData.displayName,
                                     style: const TextStyle(
@@ -72,25 +72,13 @@ class _FoodDetailState extends State<FoodDetail> {
                                     ),
                                   ),
                                 ),
-                                Row(
-                                  children: [
-                                    IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(
-                                        Icons.bookmark_border,
-                                        size: 30,
-                                        color: Colors.grey[400],
-                                      ),
-                                    ),
-                                    IconButton(
-                                      onPressed: () {},
-                                      icon: Icon(
-                                        Icons.share_outlined,
-                                        size: 30,
-                                        color: Colors.grey[400],
-                                      ),
-                                    )
-                                  ],
+                                IconButton(
+                                  onPressed: () {},
+                                  icon: Icon(
+                                    Icons.share_outlined,
+                                    size: 30,
+                                    color: Colors.grey[400],
+                                  ),
                                 )
                               ],
                             ),
@@ -100,21 +88,39 @@ class _FoodDetailState extends State<FoodDetail> {
                           flex: 1,
                           child: TabBar(
                             indicatorColor: Colors.black,
-                            labelColor: Colors.red,
+                            labelColor: Color.fromRGBO(216, 67, 21, 1),
                             indicatorWeight: 3,
                             unselectedLabelColor: Colors.black,
                             tabs: [
                               Padding(
                                 padding: EdgeInsets.only(bottom: 8.0),
-                                child: Text('Ingredients'),
+                                child: Text(
+                                  'Ingredients',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w900,
+                                    fontSize: 17,
+                                  ),
+                                ),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 8.0),
-                                child: Text('Cooking Details'),
+                                child: Text(
+                                  'Cooking Details',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w900,
+                                    fontSize: 17,
+                                  ),
+                                ),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(bottom: 8.0),
-                                child: Text('Nutrition'),
+                                child: Text(
+                                  'Nutrition',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w900,
+                                    fontSize: 17,
+                                  ),
+                                ),
                               ),
                             ],
                           ),
@@ -125,7 +131,7 @@ class _FoodDetailState extends State<FoodDetail> {
                             physics: const BouncingScrollPhysics(),
                             dragStartBehavior: DragStartBehavior.down,
                             children: [
-                              Ingredients(ingridents: widget.detailData),
+                              Ingredients(ingredients: widget.detailData),
                               CookingDetails(cookingDetails: widget.detailData),
                               Nutrition(nutrition: widget.detailData),
                             ],
@@ -143,7 +149,7 @@ class _FoodDetailState extends State<FoodDetail> {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                icon:const Icon(
+                icon: const Icon(
                   Icons.arrow_back_outlined,
                 ),
               ),
@@ -159,7 +165,7 @@ class _FoodDetailState extends State<FoodDetail> {
                 },
                 icon: Icon(
                   _isLiked ? Icons.favorite_border_outlined : Icons.favorite,
-                  color:_isLiked?Colors.white: Colors.amber,
+                  color: _isLiked ? Colors.white : Colors.amber,
                 ),
               ),
             )

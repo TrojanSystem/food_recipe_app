@@ -1,9 +1,9 @@
-import 'package:dictionary/data/word_model.dart';
+import 'package:dictionary/data/food_model.dart';
 import 'package:flutter/material.dart';
 
 class Ingredients extends StatelessWidget {
-  Ingredients({Key? key, required this.ingridents}) : super(key: key);
-  FoodModel ingridents;
+  const Ingredients({Key? key, required this.ingredients}) : super(key: key);
+  final FoodModel ingredients;
 
   @override
   Widget build(BuildContext context) {
@@ -11,41 +11,78 @@ class Ingredients extends StatelessWidget {
       itemCount: 5,
       itemBuilder: (context, index) {
         return Container(
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(
-              Radius.circular(20),
-            ),
-          ),
-          child: ListTile(
-            title: Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
-              child: Text(
-                ingridents.ingredient[index]['ingredient'],
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
+          margin: const EdgeInsets.all(5),
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height * 0.12,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 100,
+                height: MediaQuery.of(context).size.height * 0.12,
+                decoration: BoxDecoration(
+                  color: Colors.blue[800],
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    '${ingredients.ingredient[index]['unit']}',
+                    textAlign: TextAlign.start,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
                 ),
               ),
-            ),
-            subtitle: Text(ingridents.ingredient[index]['wholeLine']),
-            leading: Text(
-              ingridents.ingredient[index]['unit'],
-              style: TextStyle(
-                color: Colors.green[800],
-                fontFamily: 'FjallaOne',
-                fontSize: 18,
-                fontWeight: FontWeight.w900,
+              Expanded(
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.12,
+                  decoration: const BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(color: Colors.black),
+                      top: BorderSide(color: Colors.black),
+                    ),
+                    color: Colors.white,
+                  ),
+                  child: ListTile(
+                    title: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 4.0, 8, 4),
+                      child: Text(
+                        '${ingredients.ingredient[index]['ingredient']}',
+                        style:const TextStyle(
+                            fontWeight: FontWeight.w900, fontSize: 17),
+                      ),
+                    ),
+                    subtitle:
+                        Text('${ingredients.ingredient[index]['wholeLine']}'),
+                  ),
+                ),
               ),
-            ),
-            trailing: Text(
-              ingridents.ingredient[index]['quantity'].toString(),
-              style: TextStyle(
-                color: Colors.green[800],
-                fontFamily: 'FjallaOne',
-                fontSize: 25,
-                fontWeight: FontWeight.w900,
+              Container(
+                width: 100,
+                height: MediaQuery.of(context).size.height * 0.12,
+                decoration: BoxDecoration(
+                  color: Colors.blue[800],
+                  borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(10),
+                    bottomRight: Radius.circular(10),
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    'x ${ingredients.ingredient[index]['quantity']}',
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
         );
       },

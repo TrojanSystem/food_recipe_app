@@ -1,9 +1,7 @@
 import 'package:dictionary/data/food_data_provider.dart';
 
 import 'package:dictionary/main_screen/search_area.dart';
-import 'package:dictionary/data/word_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
 
 import 'bottom_food_list.dart';
@@ -32,8 +30,8 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-
     int columnCount = 3;
+
     final foodList = Provider.of<FoodDataProvider>(context).foodListData;
     return Scaffold(
       appBar: AppBar(
