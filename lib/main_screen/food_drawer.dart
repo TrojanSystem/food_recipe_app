@@ -20,6 +20,13 @@ class FoodDrawer extends StatelessWidget {
             child: Image.asset('images/hat.png'),
           ),
         ),
+        const Text(
+          'Cook UR Self',
+          style: TextStyle(
+            fontWeight: FontWeight.w900,
+            fontSize: 25,
+          ),
+        ),
         const SizedBox(
           height: 150,
         ),
@@ -50,7 +57,7 @@ class FoodDrawer extends StatelessWidget {
                       ),
                     ),
                   )
-                :  Navigator.pop(context) ;
+                : Navigator.pop(context);
           },
         ),
         foodFilter(
