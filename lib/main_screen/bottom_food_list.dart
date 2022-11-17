@@ -20,7 +20,7 @@ class BottomFoodList extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimationLimiter(
       child: ListView.builder(
-        itemCount: 3,
+        itemCount: foodList.length,
         physics: const BouncingScrollPhysics(
             parent: AlwaysScrollableScrollPhysics()),
         padding: EdgeInsets.all(w / 60),
