@@ -11,15 +11,15 @@ class Ingredients extends StatelessWidget {
       itemCount: 5,
       itemBuilder: (context, index) {
         return Container(
-          margin: const EdgeInsets.all(5),
+          margin: const EdgeInsets.fromLTRB(5,0,5,0),
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height * 0.12,
+          height: MediaQuery.of(context).size.height * 0.18,
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                width: 100,
-                height: MediaQuery.of(context).size.height * 0.12,
+                width: 85,
+                height: MediaQuery.of(context).size.height * 0.15,
                 decoration: BoxDecoration(
                   color: Colors.blue[800],
                   borderRadius: const BorderRadius.only(
@@ -40,7 +40,7 @@ class Ingredients extends StatelessWidget {
               ),
               Expanded(
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.12,
+                  height: MediaQuery.of(context).size.height * 0.15,
                   decoration: const BoxDecoration(
                     border: Border(
                       bottom: BorderSide(color: Colors.black),
@@ -63,8 +63,8 @@ class Ingredients extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 100,
-                height: MediaQuery.of(context).size.height * 0.12,
+                width: 85,
+                height: MediaQuery.of(context).size.height * 0.15,
                 decoration: BoxDecoration(
                   color: Colors.blue[800],
                   borderRadius: const BorderRadius.only(

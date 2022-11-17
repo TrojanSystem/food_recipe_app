@@ -1,6 +1,7 @@
 import 'package:dictionary/data/food_model.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_share/flutter_share.dart';
 
 import 'cooking_details.dart';
 
@@ -18,7 +19,14 @@ class FoodDetail extends StatefulWidget {
 
 class _FoodDetailState extends State<FoodDetail> {
   bool _isLiked = false;
-
+  Future<void> share() async {
+    await FlutterShare.share(
+        title: 'Example share',
+        text: 'Example share text',
+        linkUrl: 'https://flutter.dev/',
+        chooserTitle: 'Example Chooser Title'
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -73,7 +81,7 @@ class _FoodDetailState extends State<FoodDetail> {
                                   ),
                                 ),
                                 IconButton(
-                                  onPressed: () {},
+                                  onPressed:share,
                                   icon: Icon(
                                     Icons.share_outlined,
                                     size: 30,

@@ -37,10 +37,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.5
   flutter_staggered_animations: ^1.1.1
-  material_design_icons_flutter: 5.0.6996
+  material_design_icons_flutter: ^6.0.7096
   get: ^4.6.5
   http: ^0.13.5
   provider: ^6.0.4
+  flutter_share: ^2.0.0
 
 dev_dependencies:
   flutter_test:
