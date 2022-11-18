@@ -1,7 +1,7 @@
 class FoodModel {
   String videoUrls;
-  String discription;
-  String defficulty;
+  String description;
+  String difficulty;
   String displayName;
   double rating;
   String totalTime;
@@ -19,8 +19,8 @@ class FoodModel {
       {required this.hostedLargeUrl,
       required this.nutrition,
       required this.ingredient,
-      required this.defficulty,
-      required this.discription,
+      required this.difficulty,
+      required this.description,
       required this.videoUrls,
       required this.course,
       required this.category,

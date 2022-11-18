@@ -56,7 +56,7 @@ class JordanaKitchen extends ChangeNotifier {
       },
       rating: 3.4,
       videoUrls:
-          'https://www.youtube.com/watch?v=zZuOgJBRqQs&ab_channel=RecipeTinEats',
+          'https://youtu.be/NcUEZaOp-5s',
       totalTime: '1h 15min',
       ingredient: [
         {
@@ -107,6 +107,73 @@ class JordanaKitchen extends ChangeNotifier {
           'quantity': 1,
           'wholeLine': "ጨው እና ቁንዶበርበሬ"
         },
+      ],
+    ),
+    JordanaKitchenFoodModel(
+      course: 'Dinner',
+      category: 'Soup',
+      difficulty: 'Easy',
+      displayName: 'የዶሮ ማጣፈጫ ሾርባ',
+      hostedLargeUrl:
+      'https://img.delicious.com.au/pMrQRhBE/del/2015/10/chicken-stock-12493-1.jpg',
+      preparationSteps: {
+        0: 'አትክልቶቹን ሁሉንም በደንብ ልጦ ማጠብ',
+        1: 'ዶሮዉን በደንብ ማጠብ እና መቆራረጥ',
+        2: 'በትልቅ ድስት ዉስጥ ሁሉንም አትክልቶች፣ ዶሮ እና ጨው ጨምሮ ለ 2 ሰአት ያክል በደንብ ማብሰል',
+        3: 'ጨዉና ዉሃ አርጎ ለ 1 ሰአት አትክልቶቹን በደንብ መቀቀል',
+        4: 'በስሎ ከቀዘቀዘ በኋላ ዶሮዉን አዉጥቶ ሌላዉን በማጥለያ ዉሃዉን ማጥለል',
+        5: 'የተጠለለዉን የአትክልት ዉሃ ለተለያዩ ሾርባወች መከለሻ ይሆናል',
+      },
+      nutrition: {
+        0: "Low Sugar",
+        1: "High Saturated Fat",
+        2: "Low Carb",
+        3: "Low Calorie",
+        4: "High Protein"
+      },
+      rating: 4.4,
+      videoUrls:
+      'https://youtu.be/plz4JWEbchU',
+      totalTime: '2h 30min',
+      ingredient: [
+        {
+          'ingredient': "ዶሮ",
+          'unit': 'kg',
+          'quantity': 1,
+          'wholeLine': "1 ሙሉ ባለ 1.5kg ዶሮ"
+        },
+        {
+          'ingredient': "የሾርባ ቅጠል",
+          'unit': 'እስር',
+          'quantity': 1,
+          'wholeLine': "1 እስር የሾርባ ቅጠል"
+        },
+        {
+          'ingredient': "ባሮ ሽንኩርት",
+          'unit': 'ፍሬ',
+          'quantity': 2,
+          'wholeLine': "2 ፍሬ ባሮ ሽንኩርት"
+        },
+        {
+          'ingredient': "ጨው",
+          'unit': 'tsp',
+          'quantity': 2,
+          'wholeLine': "2 የሾርባ ማንኪያ ጨው"
+        },
+
+        {
+          'ingredient': "ካሮት",
+          'unit': 'ፍሬ',
+          'quantity': 1,
+          'wholeLine': "1 ፍሬ ካሮት"
+        },
+        {
+          'ingredient': "ዉሃ",
+          'unit': 'L',
+          'quantity': 1.5,
+          'wholeLine': "1.5 ዉሃ"
+        },
+
       ],
     ),
   ];

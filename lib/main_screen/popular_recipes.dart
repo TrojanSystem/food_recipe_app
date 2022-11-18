@@ -149,7 +149,7 @@ class PopularRecipes extends StatelessWidget {
                                       const SizedBox(
                                         width: 5,
                                       ),
-                                      Text(popularRecipes[index].defficulty),
+                                      Text(popularRecipes[index].difficulty),
                                     ],
                                   ),
                                 ],

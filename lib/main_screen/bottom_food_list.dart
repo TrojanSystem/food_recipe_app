@@ -128,7 +128,7 @@ class BottomFoodList extends StatelessWidget {
                                       const SizedBox(
                                         width: 10,
                                       ),
-                                      Text(foodList[index].defficulty),
+                                      Text(foodList[index].difficulty),
                                     ],
                                   ),
                                 ),

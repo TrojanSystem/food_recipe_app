@@ -129,7 +129,7 @@ class FilterFood extends StatelessWidget {
                                           width: 10,
                                         ),
                                         Text(
-                                            filteredFoodList[index].defficulty),
+                                            filteredFoodList[index].difficulty),
                                       ],
                                     ),
                                   ),
