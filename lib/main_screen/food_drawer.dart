@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lite_rolling_switch/lite_rolling_switch.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../category/category_list.dart';
 import '../food_details/filtered_food.dart';
 
 class FoodDrawer extends StatelessWidget {
@@ -29,6 +30,31 @@ class FoodDrawer extends StatelessWidget {
         ),
         const SizedBox(
           height: 150,
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Category',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) => CategoryList(),
+                    ),
+                  );
+                },
+                icon: Icon(Icons.arrow_forward_ios_outlined),
+              ),
+            ],
+          ),
         ),
         foodFilter(
           title: 'High Protein',
