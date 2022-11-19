@@ -1,3 +1,4 @@
+import 'package:dictionary/food_details/filtered_food.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -5,8 +6,8 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'category_item.dart';
 
 class CategoryList extends StatefulWidget {
-  const CategoryList({super.key});
-
+   CategoryList({required this.categoryList});
+List categoryList;
   @override
   _CategoryListState createState() => _CategoryListState();
 }
@@ -59,7 +60,10 @@ class _CategoryListState extends State<CategoryList> {
 
   @override
   Widget build(BuildContext c) {
-    double w = MediaQuery.of(context).size.width;
+    double w = MediaQuery
+        .of(context)
+        .size
+        .width;
     int columnCount = 2;
 
     return Scaffold(
@@ -68,7 +72,9 @@ class _CategoryListState extends State<CategoryList> {
           title: const Text("Food Category"),
           backgroundColor: Colors.white,
           elevation: 0,
-          iconTheme: Theme.of(context).iconTheme,
+          iconTheme: Theme
+              .of(context)
+              .iconTheme,
           centerTitle: true,
           brightness: Brightness.dark),
       body: AnimationLimiter(
@@ -79,7 +85,7 @@ class _CategoryListState extends State<CategoryList> {
           crossAxisCount: columnCount,
           children: List.generate(
             categoryItem.length,
-            (int index) {
+                (int index) {
               return AnimationConfiguration.staggeredGrid(
                 position: index,
                 duration: const Duration(milliseconds: 500),
@@ -94,7 +100,7 @@ class _CategoryListState extends State<CategoryList> {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius:
-                            const BorderRadius.all(Radius.circular(20)),
+                        const BorderRadius.all(Radius.circular(20)),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.black.withOpacity(0.1),
@@ -107,7 +113,14 @@ class _CategoryListState extends State<CategoryList> {
                         color: categoryItem[index]['color'],
                         image: categoryItem[index]['image'],
                         title: categoryItem[index]['title'],
-                        navigate: () {},
+                        navigate: () {
+                          Navigator.of(context).push(
+                              MaterialPageRoute(builder: (ctx) =>FilterFood(
+                              filteringQuery:  categoryItem[index]['title'],
+                              foodList:widget.categoryList,
+                              checkNumber: 1,
+                              identifier: 'category'),));
+                        },
                       ),
                     ),
                   ),

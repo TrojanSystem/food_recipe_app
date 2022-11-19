@@ -19,6 +19,7 @@ class BottomFoodList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    foodList.shuffle();
     return AnimationLimiter(
       child: ListView.builder(
         itemCount: foodList.length,

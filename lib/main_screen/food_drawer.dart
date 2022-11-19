@@ -36,7 +36,7 @@ class FoodDrawer extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 'Category',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -47,11 +47,11 @@ class FoodDrawer extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (ctx) => CategoryList(),
+                      builder: (ctx) =>  CategoryList(categoryList:dataToBeFilter ),
                     ),
                   );
                 },
-                icon: Icon(Icons.arrow_forward_ios_outlined),
+                icon: const Icon(Icons.arrow_forward_ios_outlined),
               ),
             ],
           ),
@@ -63,6 +63,8 @@ class FoodDrawer extends StatelessWidget {
                 ? Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (ctx) => FilterFood(
+                        identifier: 'filter',
+                        checkNumber: 4,
                         filteringQuery: 'High Protein',
                         foodList: dataToBeFilter,
                       ),
@@ -78,6 +80,8 @@ class FoodDrawer extends StatelessWidget {
                 ? Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (ctx) => FilterFood(
+                        checkNumber: 2,
+                        identifier: 'filter',
                         filteringQuery: 'Low Carb',
                         foodList: dataToBeFilter,
                       ),
@@ -93,6 +97,8 @@ class FoodDrawer extends StatelessWidget {
                 ? Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (ctx) => FilterFood(
+                        checkNumber: 1,
+                        identifier: 'filter',
                         filteringQuery: 'Low Fat',
                         foodList: dataToBeFilter,
                       ),
@@ -108,6 +114,8 @@ class FoodDrawer extends StatelessWidget {
                 ? Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (ctx) => FilterFood(
+                        checkNumber: 3,
+                        identifier: 'filter',
                         filteringQuery: 'High Calorie',
                         foodList: dataToBeFilter,
                       ),

@@ -23,7 +23,7 @@ class FoodDataProvider extends ChangeNotifier {
       },
       nutrition: {
         0: "Low Sugar",
-        1: "Low Saturated Fat",
+        1: "Low Fat",
         2: "Low Carb",
         3: "Low Calorie",
         4: "Low Protein"
@@ -102,7 +102,7 @@ class FoodDataProvider extends ChangeNotifier {
       },
       nutrition: {
         0: "Low Sugar",
-        1: "High Saturated Fat",
+        1: "Low Fat",
         2: "Low Carb",
         3: "Low Calorie",
         4: "High Protein"
@@ -224,11 +224,11 @@ class FoodDataProvider extends ChangeNotifier {
             "These creamy, cheesy chicken breasts will, as their title says, melt in your mouth.).",
         nutrition: {
           0: "Low Sugar",
-          1: "Low Saturated Fat",
+          1: "Low Fat",
           2: "Low Carb",
           3: "Low Calorie",
           4: "High Protein"
-        }),
+        },),
     FoodModel(
         videoUrls:
             "https://gv.yummlystatic.com/aMiA7kETwmxm1kJ6bIXA_Montage_Sugar_Cookie_Keto_Flourless_No_Sugar/aMiA7kETwmxm1kJ6bIXA_Montage_Sugar_Cookie_Keto_Flourless_No_Sugar-dash.mpd",
@@ -306,7 +306,7 @@ class FoodDataProvider extends ChangeNotifier {
             "Meet your new favorite keto cookie recipe! Super-fine almond flour, erythritol, cream cheese, and butter come together to make these easy, soft keto sugar cookies. While they appear and taste like classic sugar cookies, these guilt-free cookies are low in carbs, making them keto diet approved. They're incredibly rich thanks to the butter, cream cheese, and egg, while erythritol (a sugar-alcohol-based alternative sweetener) and vanilla extract provide the perfect amount of sweetness. Not only are they low-carb, but they're also gluten-free and grain-free — plus you can feel good about using erythritol because it's natural and tastes like sugar without the extra calories. An added bonus: they only take about 20 minutes to make.These keto cookies are perfect for any party or special occasion. They're always a hit around Christmas — sugar cookies are a holiday staple in most American households — and they make a great healthy option for holiday cookie swaps. The recipe is a Yummly original created by [Sara Mellas](https://www.yummly.com/dish/author/Sara%20Mellas). Why Keto? There are a few potential benefits to following a ketogenic diet. When you eat a very low-carb diet, you can turn your body into a fat-burning machine by creating ketones. What this means is when you follow a diet that's high in fat and low in net carbs, your body adjusts so that it pulls its energy from fat. As a result, insulin levels get low enough that your body starts burning rapidly, which is one of the reasons why people turn to the keto diet. The keto diet has been shown to support weight loss, improve energy levels, and increase brain function, among other health benefits. People who follow the keto diet are always on the lookout for delicious low-carb recipes that call for lots of healthy fats like avocado, coconut oil, and even butter — this cookie fits the bill. Variations: Looking to spice up your keto sugar cookie recipe? Here are a few great options to make it your own: _Pump up the almond._ Try substituting almond extract for vanilla extract to give your cookies a warm, toasted almond flavor. Your almond sugar cookies will smell divine right out of the oven! You can even top them with sliced or slivered almonds. _Mix in chocolate._ While traditional sugar cookies have a vanilla flavor and don't contain chocolate chips, why not mix things up? Feel free to toss in chocolate chips. Just be sure they're sugar-free if you're sticking to the low-carb keto theme. _Cut into shapes._ Have some fun with your keto cookie recipe! Use a cookie cutter to make a variety of shapes and sizes. _Swap your flour._ Try using coconut flour instead of almond flour, depending on what you have on hand or prefer in flavor. Just remember coconut flour is extremely absorbent so you don't need a lot. Both options are gluten-free. _Add frosting._ Nothing beats a frosted cookie come holiday season. Check out a keto-friendly chocolate frosting recipe using coconut oil for a low-carb alternative to canned frosting loaded with sugar and additives. Satisfy your sweet tooth with these keto sugar cookies, which look and taste like the real thing. You can save any leftover cookies in a cool, dry pantry or cupboard for up to three weeks, or frozen for up to three months. If you have any leftovers, that is!",
         nutrition: {
           0: "Low Sugar",
-          1: "Low Saturated Fat",
+          1: "Low Fat",
           2: "Low Carb",
           3: "Low Calorie",
           4: "Low Protein"
@@ -386,7 +386,7 @@ class FoodDataProvider extends ChangeNotifier {
             "These creamy, cheesy chicken breasts will, as their title says, melt in your mouth.).",
         nutrition: {
           0: "Low Sugar",
-          1: "Low Saturated Fat",
+          1: "Low Fat",
           2: "Low Carb",
           3: "Low Calorie",
           4: "High Protein"
@@ -468,7 +468,7 @@ class FoodDataProvider extends ChangeNotifier {
             "Meet your new favorite keto cookie recipe! Super-fine almond flour, erythritol, cream cheese, and butter come together to make these easy, soft keto sugar cookies. While they appear and taste like classic sugar cookies, these guilt-free cookies are low in carbs, making them keto diet approved. They're incredibly rich thanks to the butter, cream cheese, and egg, while erythritol (a sugar-alcohol-based alternative sweetener) and vanilla extract provide the perfect amount of sweetness. Not only are they low-carb, but they're also gluten-free and grain-free — plus you can feel good about using erythritol because it's natural and tastes like sugar without the extra calories. An added bonus: they only take about 20 minutes to make.These keto cookies are perfect for any party or special occasion. They're always a hit around Christmas — sugar cookies are a holiday staple in most American households — and they make a great healthy option for holiday cookie swaps. The recipe is a Yummly original created by [Sara Mellas](https://www.yummly.com/dish/author/Sara%20Mellas). Why Keto? There are a few potential benefits to following a ketogenic diet. When you eat a very low-carb diet, you can turn your body into a fat-burning machine by creating ketones. What this means is when you follow a diet that's high in fat and low in net carbs, your body adjusts so that it pulls its energy from fat. As a result, insulin levels get low enough that your body starts burning rapidly, which is one of the reasons why people turn to the keto diet. The keto diet has been shown to support weight loss, improve energy levels, and increase brain function, among other health benefits. People who follow the keto diet are always on the lookout for delicious low-carb recipes that call for lots of healthy fats like avocado, coconut oil, and even butter — this cookie fits the bill. Variations: Looking to spice up your keto sugar cookie recipe? Here are a few great options to make it your own: _Pump up the almond._ Try substituting almond extract for vanilla extract to give your cookies a warm, toasted almond flavor. Your almond sugar cookies will smell divine right out of the oven! You can even top them with sliced or slivered almonds. _Mix in chocolate._ While traditional sugar cookies have a vanilla flavor and don't contain chocolate chips, why not mix things up? Feel free to toss in chocolate chips. Just be sure they're sugar-free if you're sticking to the low-carb keto theme. _Cut into shapes._ Have some fun with your keto cookie recipe! Use a cookie cutter to make a variety of shapes and sizes. _Swap your flour._ Try using coconut flour instead of almond flour, depending on what you have on hand or prefer in flavor. Just remember coconut flour is extremely absorbent so you don't need a lot. Both options are gluten-free. _Add frosting._ Nothing beats a frosted cookie come holiday season. Check out a keto-friendly chocolate frosting recipe using coconut oil for a low-carb alternative to canned frosting loaded with sugar and additives. Satisfy your sweet tooth with these keto sugar cookies, which look and taste like the real thing. You can save any leftover cookies in a cool, dry pantry or cupboard for up to three weeks, or frozen for up to three months. If you have any leftovers, that is!",
         nutrition: {
           0: "Low Sugar",
-          1: "Low Saturated Fat",
+          1: "Low Fat",
           2: "Low Carb",
           3: "Low Calorie",
           4: "Low Protein"
@@ -548,7 +548,7 @@ class FoodDataProvider extends ChangeNotifier {
             "These creamy, cheesy chicken breasts will, as their title says, melt in your mouth.).",
         nutrition: {
           0: "Low Sugar",
-          1: "Low Saturated Fat",
+          1: "Low Fat",
           2: "Low Carb",
           3: "Low Calorie",
           4: "High Protein"
