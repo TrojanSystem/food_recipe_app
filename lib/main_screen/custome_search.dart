@@ -1,4 +1,6 @@
+import 'package:dictionary/data/food_data_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 class CustomSearchDelegate extends SearchDelegate {
 // Demo list to show querying
   List<String> searchTerms = [
@@ -61,6 +63,7 @@ class CustomSearchDelegate extends SearchDelegate {
 // querying process at the runtime
   @override
   Widget buildSuggestions(BuildContext context) {
+    final filterdFood =Provider.of<FoodDataProvider>(context).foodListData;
     List<String> matchQuery = [];
     for (var fruit in searchTerms) {
       if (fruit.toLowerCase().contains(query.toLowerCase())) {

@@ -3,6 +3,11 @@ import 'package:dictionary/data/food_model.dart';
 import 'package:flutter/material.dart';
 
 class FoodDataProvider extends ChangeNotifier {
+bool isShowing =false;
+  void changer(bool isShow){
+    isShowing = !isShow;
+    notifyListeners();
+  }
   List<FoodModel> foodListData = [
     FoodModel(
       description:
