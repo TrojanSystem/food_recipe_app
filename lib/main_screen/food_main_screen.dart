@@ -1,10 +1,9 @@
 import 'package:dictionary/data/food_data_provider.dart';
+import 'package:dictionary/food_details/filtered_food.dart';
 
-import 'package:dictionary/main_screen/search_area.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'custome_search.dart';
 import 'food_drawer.dart';
 import 'bottom_food_list.dart';
 import 'popular_recipes.dart';
@@ -20,16 +19,7 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController searchWord = TextEditingController();
   final FocusNode searchWordNode = FocusNode();
-  List<String> searchTerms = [
-    "Apple",
-    "Banana",
-    "Mango",
-    "Pear",
-    "Watermelons",
-    "Blueberries",
-    "Pineapples",
-    "Strawberries"
-  ];
+
   late String searched = '';
 
   @override
@@ -44,29 +34,22 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
     double w = MediaQuery.of(context).size.width;
     int columnCount = 3;
     bool _isVisible = false;
+    List<String> searchTerms = [];
+    final foodList = Provider.of<FoodDataProvider>(context).foodListData;
+    foodList.map((e) => searchTerms.add(e.displayName)).toList();
+
     List<String> matchQuery = [];
     for (var fruit in searchTerms) {
       if (fruit.toLowerCase().contains(searched.toLowerCase())) {
         matchQuery.add(fruit);
       }
     }
-    final foodList = Provider.of<FoodDataProvider>(context).foodListData;
     return Scaffold(
       appBar: AppBar(
         iconTheme: Theme.of(context).iconTheme,
         backgroundColor: Colors.white,
         elevation: 0,
-        // actions: [
-        //   IconButton(
-        //     onPressed: () {
-        //       showSearch(
-        //           context: context,
-        //           // delegate to customize the search bar
-        //           delegate: CustomSearchDelegate(),);
-        //     },
-        //     icon: Icon(Icons.search),
-        //   ),
-        // ],
+
       ),
       body: SingleChildScrollView(
         child: SizedBox(
@@ -115,6 +98,8 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
                                     searched = value;
 
                                     if (value.isEmpty) {
+                                      FocusScope.of(context).unfocus();
+
                                       Provider.of<FoodDataProvider>(context,
                                               listen: false)
                                           .changer(!_isVisible);
@@ -186,16 +171,34 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
                           itemCount: matchQuery.length,
                           itemBuilder: (context, index) {
                             var result = matchQuery[index];
-                            return ListTile(
-                              title: Text(
-                                result,
-                                style: const TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w900,
-                                  fontSize: 18,
-                                ),
-                              ),
-                            );
+
+                            return result.isNotEmpty
+                                ? ListTile(
+                                    onTap: () {
+                                      Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                          builder: (ctx) => FilterFood(
+                                              filteringQuery: result,
+                                              foodList: foodList,
+                                              checkNumber: 1,
+                                              identifier: 'search'),
+
+                                        ),
+                                      );
+
+                                    },
+                                    title: Text(
+                                      result,
+                                      style: const TextStyle(
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w900,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  )
+                                : const Center(
+                                    child: Text('No Recipe By Value Entered!'),
+                                  );
                           },
                         ),
                       ),

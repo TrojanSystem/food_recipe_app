@@ -28,9 +28,13 @@ class FilterFood extends StatelessWidget {
             .where(
                 (element) => element.nutrition[checkNumber] == filteringQuery)
             .toList()
-        : foodList
-            .where((element) => element.category == filteringQuery)
-            .toList();
+        : identifier == 'search'
+            ? foodList
+                .where((element) => element.displayName == filteringQuery)
+                .toList()
+            : foodList
+                .where((element) => element.category == filteringQuery)
+                .toList();
     return Scaffold(
       appBar: AppBar(
         iconTheme: Theme.of(context).iconTheme,
@@ -114,7 +118,8 @@ class FilterFood extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(10),
                                       clipBehavior: Clip.antiAlias,
                                       child: FancyShimmerImage(
-                                        imageUrl: filteredFoodList[index].hostedLargeUrl,
+                                        imageUrl: filteredFoodList[index]
+                                            .hostedLargeUrl,
                                         errorWidget: Image.network(
                                             'https://i0.wp.com/www.dobitaobyte.com.br/wp-content/uploads/2016/02/no_image.png?ssl=1'),
                                         shimmerBaseColor: Colors.greenAccent,

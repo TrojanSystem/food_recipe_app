@@ -1,4 +1,5 @@
 import 'package:dictionary/data/food_model.dart';
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
@@ -41,11 +42,16 @@ class _FoodDetailState extends State<FoodDetail> {
               children: [
                 Expanded(
                   flex: 2,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: NetworkImage(widget.detailData.hostedLargeUrl),
-                          fit: BoxFit.cover),
+                  child:ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    clipBehavior: Clip.antiAlias,
+                    child: FancyShimmerImage(
+                      imageUrl: widget.detailData.hostedLargeUrl,
+                      errorWidget: Image.network(
+                          'https://i0.wp.com/www.dobitaobyte.com.br/wp-content/uploads/2016/02/no_image.png?ssl=1'),
+                      shimmerBaseColor: Colors.greenAccent,
+                      shimmerHighlightColor: Colors.grey,
+                      shimmerBackColor: Colors.greenAccent,boxFit: BoxFit.fill,
                     ),
                   ),
                 ),
