@@ -4,6 +4,7 @@ import 'package:dictionary/main_screen/search_area.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'custome_search.dart';
 import 'food_drawer.dart';
 import 'bottom_food_list.dart';
 import 'popular_recipes.dart';
@@ -16,18 +17,6 @@ class FoodMainScreen extends StatefulWidget {
 }
 
 class _FoodMainScreenState extends State<FoodMainScreen> {
-  final TextEditingController searchWord = TextEditingController();
-  final FocusNode searchWordNode = FocusNode();
-
-
-
-  @override
-  void dispose() {
-    searchWord.dispose();
-    searchWordNode.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -39,20 +28,33 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
         iconTheme: Theme.of(context).iconTheme,
         backgroundColor: Colors.white,
         elevation: 0,
+        actions: [
+          IconButton(
+            onPressed: () {
+              showSearch(
+                  context: context,
+                  // delegate to customize the search bar
+                  delegate: CustomSearchDelegate(),);
+            },
+            icon: Icon(Icons.search),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
-
         child: SizedBox(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height*0.92,
+          height: MediaQuery.of(context).size.height * 0.92,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Padding(
+                  children: const [
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Text(
                         'Cook at home like a chief',
@@ -62,9 +64,6 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
                         ),
                       ),
                     ),
-                    SearchArea(
-                      searchedWord: searchWord,
-                    )
                   ],
                 ),
               ),

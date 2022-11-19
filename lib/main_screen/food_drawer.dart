@@ -32,7 +32,7 @@ class FoodDrawer extends StatelessWidget {
           height: 150,
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.fromLTRB(20.0, 8, 18, 8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -47,7 +47,8 @@ class FoodDrawer extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (ctx) =>  CategoryList(categoryList:dataToBeFilter ),
+                      builder: (ctx) =>
+                          CategoryList(categoryList: dataToBeFilter),
                     ),
                   );
                 },

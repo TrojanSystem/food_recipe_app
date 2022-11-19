@@ -31,6 +31,17 @@ class Ingredients extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+
+                    Text(
+                      'x ${ingredients.ingredient[index]['quantity']}',
+                      textAlign: TextAlign.start,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),const SizedBox(
+                      height: 5,
+                    ),
                     Text(
                       '${ingredients.ingredient[index]['unit'] == 'teaspoon' ? 'tsp' : ingredients.ingredient[index]['unit']}',
                       textAlign: TextAlign.start,
@@ -39,17 +50,7 @@ class Ingredients extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 20),
                     ),
-                    const SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      'x ${ingredients.ingredient[index]['quantity']}',
-                      textAlign: TextAlign.start,
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
+
                   ],
                 ),
               ),

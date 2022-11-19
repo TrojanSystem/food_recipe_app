@@ -16,7 +16,9 @@ class PopularRecipes extends StatelessWidget {
   Widget build(BuildContext context) {
     final popularRecipes =
         popularFoodList.where((element) => element.rating >= 4.0).toList();
-    popularRecipes.sort((a,b)=>b.rating.compareTo(a.rating),);
+    popularRecipes.sort(
+      (a, b) => b.rating.compareTo(a.rating),
+    );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
