@@ -1,4 +1,5 @@
 import 'package:dictionary/data/food_data_provider.dart';
+import 'package:dictionary/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: FoodMainScreen(),
+        home: SplashScreen(),
       ),
     );
   }
