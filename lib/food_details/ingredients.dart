@@ -20,7 +20,7 @@ class Ingredients extends StatelessWidget {
             position: index,
             delay: const Duration(milliseconds: 100),
             child: Container(
-              margin: EdgeInsets.only(bottom: _w / 20),
+              margin: EdgeInsets.only(bottom: _w / 30),
               height: _w / 3,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -48,7 +48,7 @@ class Ingredients extends StatelessWidget {
                         children: [
                           Text(
                             'x ${ingredients.ingredient[index]['quantity']}',
-                            style: const TextStyle(
+                            style: const TextStyle(fontSize: 18,
                               fontWeight: FontWeight.w900,
                             ),
                           ),
@@ -57,7 +57,7 @@ class Ingredients extends StatelessWidget {
                           ),
                           Text(
                             '${ingredients.ingredient[index]['unit'] == 'teaspoon' ? 'tsp' : ingredients.ingredient[index]['unit']}',
-                            style: const TextStyle(
+                            style: const TextStyle(fontSize: 18,
                               fontWeight: FontWeight.w900,
                             ),
                           ),
@@ -81,7 +81,7 @@ class Ingredients extends StatelessWidget {
                             '${ingredients.ingredient[index]['ingredient']}',
                             style: const TextStyle(
                               fontWeight: FontWeight.w900,
-                              fontSize: 17,
+                              fontSize: 15,
                             ),
                           ),
                         ),
