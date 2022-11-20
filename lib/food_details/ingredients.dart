@@ -14,7 +14,7 @@ class Ingredients extends StatelessWidget {
         padding: EdgeInsets.all(_w / 30),
         physics: const BouncingScrollPhysics(
             parent: AlwaysScrollableScrollPhysics()),
-        itemCount: 5,
+        itemCount: ingredients.ingredient.length,
         itemBuilder: (BuildContext context, int index) {
           return AnimationConfiguration.staggeredList(
             position: index,

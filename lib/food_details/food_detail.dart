@@ -42,7 +42,7 @@ class _FoodDetailState extends State<FoodDetail> {
               children: [
                 Expanded(
                   flex: 2,
-                  child:ClipRRect(
+                  child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     clipBehavior: Clip.antiAlias,
                     child: FancyShimmerImage(
@@ -51,7 +51,8 @@ class _FoodDetailState extends State<FoodDetail> {
                           'https://i0.wp.com/www.dobitaobyte.com.br/wp-content/uploads/2016/02/no_image.png?ssl=1'),
                       shimmerBaseColor: Colors.greenAccent,
                       shimmerHighlightColor: Colors.grey,
-                      shimmerBackColor: Colors.greenAccent,boxFit: BoxFit.fill,
+                      shimmerBackColor: Colors.greenAccent,
+                      boxFit: BoxFit.fill,
                     ),
                   ),
                 ),
@@ -182,7 +183,7 @@ class _FoodDetailState extends State<FoodDetail> {
                 },
                 icon: Icon(
                   _isLiked ? Icons.favorite_border_outlined : Icons.favorite,
-                  color: _isLiked ? Colors.green[800] : Colors.green[800],
+                  color: _isLiked ? Colors.amber : Colors.amber,
                   size: 35,
                 ),
               ),
