@@ -1,5 +1,6 @@
 import 'package:dictionary/data/food_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 class Ingredients extends StatelessWidget {
   const Ingredients({Key? key, required this.ingredients}) : super(key: key);
@@ -7,81 +8,94 @@ class Ingredients extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 5,
-      itemBuilder: (context, index) {
-        return Container(
-          margin: const EdgeInsets.all(8),
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height * 0.14,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                width: 85,
-                height: MediaQuery.of(context).size.height * 0.15,
-                decoration: BoxDecoration(
-                  color: Colors.blue[800],
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(10),
+    double _w = MediaQuery.of(context).size.width;
+    return AnimationLimiter(
+      child: ListView.builder(
+        padding: EdgeInsets.all(_w / 30),
+        physics: const BouncingScrollPhysics(
+            parent: AlwaysScrollableScrollPhysics()),
+        itemCount: 5,
+        itemBuilder: (BuildContext context, int index) {
+          return AnimationConfiguration.staggeredList(
+            position: index,
+            delay: const Duration(milliseconds: 100),
+            child: Container(
+              margin: EdgeInsets.only(bottom: _w / 20),
+              height: _w / 3,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: const BorderRadius.all(Radius.circular(20)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 40,
+                    spreadRadius: 10,
                   ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-
-                    Text(
-                      'x ${ingredients.ingredient[index]['quantity']}',
-                      textAlign: TextAlign.start,
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),const SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      '${ingredients.ingredient[index]['unit'] == 'teaspoon' ? 'tsp' : ingredients.ingredient[index]['unit']}',
-                      textAlign: TextAlign.start,
-                      style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
-
-                  ],
-                ),
+                ],
               ),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.15,
-                width: MediaQuery.of(context).size.width * 0.72,
-                decoration: const BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(color: Colors.black),
-                    top: BorderSide(color: Colors.black),
-                    right: BorderSide(color: Colors.black),
-                  ),
-                  color: Colors.white,
-                ),
-                child: ListTile(
-                  title: Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 4.0, 8, 4),
-                    child: Text(
-                      '${ingredients.ingredient[index]['ingredient']}',
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w900, fontSize: 17),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.blueAccent,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'x ${ingredients.ingredient[index]['quantity']}',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            '${ingredients.ingredient[index]['unit'] == 'teaspoon' ? 'tsp' : ingredients.ingredient[index]['unit']}',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  subtitle:
-                      Text('${ingredients.ingredient[index]['wholeLine']}'),
-                ),
+                  Expanded(
+                    flex: 3,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20),
+                        ),
+                      ),
+                      child: ListTile(
+                        title: Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Text(
+                            '${ingredients.ingredient[index]['ingredient']}',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w900,
+                              fontSize: 17,
+                            ),
+                          ),
+                        ),
+                        subtitle: Text(
+                            '${ingredients.ingredient[index]['wholeLine']}'),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
-        );
-      },
+            ),
+          );
+        },
+      ),
     );
   }
 }

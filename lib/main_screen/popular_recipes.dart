@@ -57,7 +57,7 @@ class PopularRecipes extends StatelessWidget {
                       ),
                       margin: const EdgeInsets.all(6),
                       width: 180,
-                      height: MediaQuery.of(context).size.height,
+                      height: MediaQuery.of(context).size.height,clipBehavior: Clip.antiAlias,
                       child: FancyShimmerImage(
                         imageUrl: popularRecipes[index].hostedLargeUrl,
                         errorWidget: Image.network(

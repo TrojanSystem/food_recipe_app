@@ -113,7 +113,7 @@ class _FoodDetailState extends State<FoodDetail> {
                                   'Ingredients',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w900,
-                                    fontSize: 17,
+                                    fontSize: 15,
                                   ),
                                 ),
                               ),
@@ -123,7 +123,7 @@ class _FoodDetailState extends State<FoodDetail> {
                                   'Cooking Details',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w900,
-                                    fontSize: 17,
+                                    fontSize: 15,
                                   ),
                                 ),
                               ),
@@ -133,7 +133,7 @@ class _FoodDetailState extends State<FoodDetail> {
                                   'Nutrition',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w900,
-                                    fontSize: 17,
+                                    fontSize: 15,
                                   ),
                                 ),
                               ),
