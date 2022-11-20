@@ -8,10 +8,10 @@ class Ingredients extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double _w = MediaQuery.of(context).size.width;
+    double w = MediaQuery.of(context).size.width;
     return AnimationLimiter(
       child: ListView.builder(
-        padding: EdgeInsets.all(_w / 30),
+        padding: EdgeInsets.all(w / 30),
         physics: const BouncingScrollPhysics(
             parent: AlwaysScrollableScrollPhysics()),
         itemCount: ingredients.ingredient.length,
@@ -20,8 +20,8 @@ class Ingredients extends StatelessWidget {
             position: index,
             delay: const Duration(milliseconds: 100),
             child: Container(
-              margin: EdgeInsets.only(bottom: _w / 30),
-              height: _w / 3,
+              margin: EdgeInsets.only(bottom: w / 30),
+              height: w / 3,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: const BorderRadius.all(Radius.circular(20)),

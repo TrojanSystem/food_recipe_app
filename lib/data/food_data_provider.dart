@@ -186,84 +186,62 @@ class FoodDataProvider extends ChangeNotifier {
     FoodModel(
         videoUrls:
             "https://gv.yummlystatic.com/aMiA7kETwmxm1kJ6bIXA_Montage_Sugar_Cookie_Keto_Flourless_No_Sugar/aMiA7kETwmxm1kJ6bIXA_Montage_Sugar_Cookie_Keto_Flourless_No_Sugar-dash.mpd",
-        difficulty: "Quick",
-        course: "Desserts",
-        category: "Baking & Cooking",
-        rating: 4.9,
-        totalTime: "23 min",
+        difficulty: "Medium",
+        course: "Lunch",
+        category: "Homemade Pasta",
+        rating: 3.9,
+        totalTime: "1hr 30min",
         hostedLargeUrl:
-            "https://lh3.googleusercontent.com/q2rwLFGmDoB9JLDU9Hq0it2j3RL2bpwln6wHhjrNDRUglgrRyXwvohjcvHWI9f1Pz3xBLCqh1J47LbY-vzlq2Bk=s360",
-        displayName: 'Soft and Chewy Keto “Sugar” Cookies',
+            "https://res.cloudinary.com/hksqkdlah/image/upload/33125_sfs-tagliatelle-bolognese-sauce-83.jpg",
+        displayName: 'Tagliatelle',
         ingredient: [
           {
-            'ingredient': "unsalted butter",
-            'unit': 'cup',
-            'quantity': 0.5,
-            'wholeLine': "1/2 cup (115g) unsalted butter, softened"
+            'ingredient': "ፉርኖ ዱቄት",
+            'unit': 'g',
+            'quantity': 400,
+            'wholeLine': "400g ፉርኖ ዱቄት"
           },
           {
-            'ingredient': "full fat cream cheese",
-            'unit': 'ounce',
-            'quantity': 3,
-            'wholeLine': "3 oz. full-fat cream cheese"
+            'ingredient': "እንቁላል",
+            'unit': 'ፍሬ',
+            'quantity': 4,
+            'wholeLine': "4 እንቁላል"
           },
           {
-            'ingredient': "erythritol",
-            'unit': 'cup',
-            'quantity': 1.5,
-            'wholeLine': "1 1/2 cups (270g) erythritol"
+            'ingredient': "ዉሃ",
+            'unit': 'tsp',
+            'quantity': 6.5,
+            'wholeLine': "6.5 የሾርባ ማንኪያ ዉሃ"
           },
           {
-            'ingredient': "large eggs",
-            'unit': 'count',
-            'quantity': 1,
-            'wholeLine': "1 egg"
+            'ingredient': "ጨው",
+            'unit': 'tsp',
+            'quantity': (1/3).toStringAsFixed(2),
+
+            'wholeLine': "ሩብ የ ሻይ ማንኪያ ጨው"
           },
-          {
-            'ingredient': "vanilla extract",
-            'unit': 'teaspoon',
-            'quantity': 1,
-            'wholeLine': "1 tsp. vanilla extract"
-          },
-          {
-            'ingredient': "super-fine almond flour",
-            'unit': 'cup',
-            'quantity': 3,
-            'wholeLine': "3 cups (360g) super-fine almond flour"
-          },
-          {
-            'ingredient': "baking soda",
-            'unit': 'teaspoon',
-            'quantity': 0.5,
-            'wholeLine': "1/2 tsp. baking soda"
-          },
-          {
-            'ingredient': "salt",
-            'unit': 'cup',
-            'quantity': 0.5,
-            'wholeLine': "1/2 tsp salt"
-          }
+
         ],
         preparationSteps: {
-          0: "Line two baking sheets with silicone baking mats or parchment paper. Set aside.",
-          1: "Combine the softened butter, cream cheese, and erythritol in a large mixing bowl. Using a mixer with a whisk attachment, mix on medium speed until pale and fluffy, about 1 minute.",
-          2: "Add the egg and vanilla extract. Continue to beat on medium speed until light and fluffy, 30 seconds to 1 minute.",
-          3: "To measure almond flour, spoon it into a cup and level off (don't scoop or tap the cup, as this packs in extra, which can mean the cookies stay in balls in the oven rather than spread. Turn the mixer to low speed. Add the almond flour, baking soda, and salt to the bowl. Mix for about 1 minute to combine all ingredients",
-          4: "Form the cookie dough into 24 balls. Arrange on the prepared baking sheets.",
-          5: "Preheat the oven to 350°F.",
-          6: "Place the baking sheets in the freezer for 10-15 minutes. Alternately, freeze the dough balls on a small baking sheet or large plate, and transfer back to the baking sheets just before baking.",
-          7: "Bake the cookies on middle and upper-middle racks of oven until they are puffy and slightly golden brown at edges, 12-13 minutes.",
-          8: "Check to see that cookies are done. Remove from oven or add time as needed.",
-          9: "Allow cookies to cool for 5 minutes on the baking sheets, then transfer to cooling racks. Serve and enjoy. Store leftovers in an airtight container at room temperature for 3 days, or in the refrigerator for 5 days.",
+          0: "ዱቄቱን እና ጨዉን ቀላቅቅሎ በንጹህ ጠረፔዛ ላይ ማስቀመጥ",
+          1: "ዱቄቱን መሃሉን መክፈት፤እንቁላል መጨመር እና በንጹህ እጅ ማሸት(ለ 10min መታሸት አለበት)",
+          2: "እየታሸ እያለ ሊጡ የመፈረካከስ እና የመድረቅ ባህሪ ካመጣ ከ4-5 የሾርባ ማንኪያ ዉሃ መጨመር",
+          3: "ከታሸ በኋላ ለ 15min በፌስታል ተጠቅልሎ መቀመጥ አለበት",
+          4: "ሊጡን በ እንጨት ወይም በጠርሙስ ከ3cm ዉፍረት እና 50cm ቁመት እንዳይበልጥ አርጎ መዳመጥ",
+          5: "ተዳምጦ ካለቀለት በኋላ በግምት በ 1cm ርቀት መቁረጥ",
+          6: "ዱቄት የተነሰነሰበት ትሪ ወይም ጠረፔዛ ላይ በመዘርጋት ለ 1hr ይህል መጠጥ እንዲል ማድረግ",
+          7: "2L ዉሃ አፍልቶ ጨው ጨምሮ ቴላቴሊዉን ቀስ እያረጉ ዉሃ ዉስጥ መጨመር",
+          8: "ለ 3min ያህል መቀቀል እና በፓስታ ማጥለያ አርጎ ማጥለል",
+          9: "ከዛ ከማንኛዉም አይነት ሶስ ጋር ቀላቅሎ ማቅረብ።",
         },
         description:
-            "Meet your new favorite keto cookie recipe! Super-fine almond flour, erythritol, cream cheese, and butter come together to make these easy, soft keto sugar cookies. While they appear and taste like classic sugar cookies, these guilt-free cookies are low in carbs, making them keto diet approved. They're incredibly rich thanks to the butter, cream cheese, and egg, while erythritol (a sugar-alcohol-based alternative sweetener) and vanilla extract provide the perfect amount of sweetness. Not only are they low-carb, but they're also gluten-free and grain-free — plus you can feel good about using erythritol because it's natural and tastes like sugar without the extra calories. An added bonus: they only take about 20 minutes to make.These keto cookies are perfect for any party or special occasion. They're always a hit around Christmas — sugar cookies are a holiday staple in most American households — and they make a great healthy option for holiday cookie swaps. The recipe is a Yummly original created by [Sara Mellas](https://www.yummly.com/dish/author/Sara%20Mellas). Why Keto? There are a few potential benefits to following a ketogenic diet. When you eat a very low-carb diet, you can turn your body into a fat-burning machine by creating ketones. What this means is when you follow a diet that's high in fat and low in net carbs, your body adjusts so that it pulls its energy from fat. As a result, insulin levels get low enough that your body starts burning rapidly, which is one of the reasons why people turn to the keto diet. The keto diet has been shown to support weight loss, improve energy levels, and increase brain function, among other health benefits. People who follow the keto diet are always on the lookout for delicious low-carb recipes that call for lots of healthy fats like avocado, coconut oil, and even butter — this cookie fits the bill. Variations: Looking to spice up your keto sugar cookie recipe? Here are a few great options to make it your own: _Pump up the almond._ Try substituting almond extract for vanilla extract to give your cookies a warm, toasted almond flavor. Your almond sugar cookies will smell divine right out of the oven! You can even top them with sliced or slivered almonds. _Mix in chocolate._ While traditional sugar cookies have a vanilla flavor and don't contain chocolate chips, why not mix things up? Feel free to toss in chocolate chips. Just be sure they're sugar-free if you're sticking to the low-carb keto theme. _Cut into shapes._ Have some fun with your keto cookie recipe! Use a cookie cutter to make a variety of shapes and sizes. _Swap your flour._ Try using coconut flour instead of almond flour, depending on what you have on hand or prefer in flavor. Just remember coconut flour is extremely absorbent so you don't need a lot. Both options are gluten-free. _Add frosting._ Nothing beats a frosted cookie come holiday season. Check out a keto-friendly chocolate frosting recipe using coconut oil for a low-carb alternative to canned frosting loaded with sugar and additives. Satisfy your sweet tooth with these keto sugar cookies, which look and taste like the real thing. You can save any leftover cookies in a cool, dry pantry or cupboard for up to three weeks, or frozen for up to three months. If you have any leftovers, that is!",
+            "Tagliatelle is a long, flat, ribbon-shaped pasta originating in Italy\'s Marche and Emilia-Romagna regions. It\'s available in both fresh and dried forms, and is traditionally served with meat sauce, such as the classic Bolognese.",
         nutrition: {
           0: "Low Sugar",
           1: "Low Fat",
-          2: "Low Carb",
+          2: "High Carb",
           3: "Low Calorie",
-          4: "Low Protein"
+          4: "High Protein"
         }),
     FoodModel(
         videoUrls:

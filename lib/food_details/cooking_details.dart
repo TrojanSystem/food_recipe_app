@@ -99,7 +99,7 @@ class _CookingDetailsState extends State<CookingDetails> {
                             Container(
                               padding: const EdgeInsets.only(top: 8),
                               margin: const EdgeInsets.only(bottom: 8),
-                              width: MediaQuery.of(context).size.width * 0.9,
+                              width: MediaQuery.of(context).size.width * 0.87,
                               height: 50,
                               child: Text(
                                 widget.cookingDetails.preparationSteps[index],
