@@ -29,10 +29,10 @@ class FoodDrawer extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 150,
+          height: 135,
         ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(20.0, 8, 18, 8),
+          padding: const EdgeInsets.fromLTRB(20.0, 8, 18, 0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -52,7 +52,33 @@ class FoodDrawer extends StatelessWidget {
                     ),
                   );
                 },
-                icon: const Icon(Icons.arrow_forward_ios_outlined),
+                icon: const Icon(Icons.arrow_forward_outlined),
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20.0, 8, 18, 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                'Favorite',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (ctx) =>
+                          CategoryList(categoryList: dataToBeFilter),
+                    ),
+                  );
+                },
+                icon: const Icon(Icons.arrow_forward_outlined),
               ),
             ],
           ),
