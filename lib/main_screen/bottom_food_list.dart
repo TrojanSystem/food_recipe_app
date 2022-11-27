@@ -2,7 +2,9 @@ import 'package:dictionary/data/food_model.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:provider/provider.dart';
 
+import '../data/recipe_data.dart';
 import '../food_details/food_detail.dart';
 
 class BottomFoodList extends StatelessWidget {
@@ -19,6 +21,7 @@ class BottomFoodList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final yearFilter = Provider.of<RecipeData>(context).expenseList;
  //   foodList.shuffle();
     return AnimationLimiter(
       child: ListView.builder(
@@ -40,7 +43,7 @@ class BottomFoodList extends StatelessWidget {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (ctx) => FoodDetail(
-                          detailData: foodList[index],
+                          detailData: foodList[index],fav:yearFilter,
                         ),
                       ),
                     );

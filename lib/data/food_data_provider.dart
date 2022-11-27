@@ -12,6 +12,8 @@ class FoodDataProvider extends ChangeNotifier {
 
   List<FoodModel> foodListData = [
     FoodModel(
+      isFavorite: false,
+      itemIndex: 1,
       description:
           ' Vegetable stock is a flavoured liquid preparation made by simmering vegetables in water.',
       course: 'Lunch',
@@ -105,6 +107,8 @@ class FoodDataProvider extends ChangeNotifier {
       ],
     ),
     FoodModel(
+      isFavorite: false,
+      itemIndex: 2,
       description:
           ' Vegetable stock is a flavoured liquid preparation made by simmering vegetables in water.',
       course: 'Dinner',
@@ -184,6 +188,8 @@ class FoodDataProvider extends ChangeNotifier {
       ],
     ),
     FoodModel(
+        isFavorite: false,
+        itemIndex: 3,
         videoUrls:
             "https://gv.yummlystatic.com/aMiA7kETwmxm1kJ6bIXA_Montage_Sugar_Cookie_Keto_Flourless_No_Sugar/aMiA7kETwmxm1kJ6bIXA_Montage_Sugar_Cookie_Keto_Flourless_No_Sugar-dash.mpd",
         difficulty: "Medium",
@@ -216,11 +222,9 @@ class FoodDataProvider extends ChangeNotifier {
           {
             'ingredient': "ጨው",
             'unit': 'tsp',
-            'quantity': (1/3).toStringAsFixed(2),
-
+            'quantity': (1 / 3).toStringAsFixed(2),
             'wholeLine': "ሩብ የ ሻይ ማንኪያ ጨው"
           },
-
         ],
         preparationSteps: {
           0: "ዱቄቱን እና ጨዉን ቀላቅቅሎ በንጹህ ጠረፔዛ ላይ ማስቀመጥ",
@@ -244,6 +248,8 @@ class FoodDataProvider extends ChangeNotifier {
           4: "High Protein"
         }),
     FoodModel(
+        isFavorite: false,
+        itemIndex: 4,
         videoUrls:
             "https://gv.yummlystatic.com/c067935f-d557-47a9-b4af-760d1a815302/PmyfziuSPqisUO36HnEA_Montage_Melt_in_Your_Mouth_Baked_Chicken_Breasts/dash.mpd",
         difficulty: "Easy",

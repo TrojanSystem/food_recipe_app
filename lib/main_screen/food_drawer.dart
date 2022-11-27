@@ -1,3 +1,4 @@
+import 'package:dictionary/food_details/favorite_list.dart';
 import 'package:flutter/material.dart';
 import 'package:lite_rolling_switch/lite_rolling_switch.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -74,7 +75,7 @@ class FoodDrawer extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (ctx) =>
-                          CategoryList(categoryList: dataToBeFilter),
+                          FavoriteList(favoriteList:dataToBeFilter ),
                     ),
                   );
                 },

@@ -4,6 +4,7 @@ import 'package:dictionary/food_details/filtered_food.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../data/recipe_data.dart';
 import 'food_drawer.dart';
 import 'bottom_food_list.dart';
 import 'popular_recipes.dart';
@@ -31,11 +32,13 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     double w = MediaQuery.of(context).size.width;
     int columnCount = 3;
-    bool _isVisible = false;
+    bool isVisible = false;
     List<String> searchTerms = [];
     final foodList = Provider.of<FoodDataProvider>(context).foodListData;
+
     foodList.map((e) => searchTerms.add(e.displayName)).toList();
 
     List<String> matchQuery = [];
@@ -102,11 +105,11 @@ class _FoodMainScreenState extends State<FoodMainScreen> {
 
                                       Provider.of<FoodDataProvider>(context,
                                               listen: false)
-                                          .changer(!_isVisible);
+                                          .changer(!isVisible);
                                     } else {
                                       Provider.of<FoodDataProvider>(context,
                                               listen: false)
-                                          .changer(_isVisible);
+                                          .changer(isVisible);
                                     }
                                     // print( Provider.of<FoodDataProvider>(context,listen: false).isShowing);
                                   });

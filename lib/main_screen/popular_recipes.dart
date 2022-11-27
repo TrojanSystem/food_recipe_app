@@ -1,7 +1,9 @@
 import 'package:dictionary/data/food_model.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../data/recipe_data.dart';
 import '../food_details/food_detail.dart';
 
 class PopularRecipes extends StatelessWidget {
@@ -14,6 +16,8 @@ class PopularRecipes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final yearFilter = Provider.of<RecipeData>(context).expenseList;
+
     final popularRecipes =
         popularFoodList.where((element) => element.rating >= 4.0).toList();
     popularRecipes.sort(
@@ -40,12 +44,13 @@ class PopularRecipes extends StatelessWidget {
             itemCount: popularRecipes.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
+
               return GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (ctx) =>
-                          FoodDetail(detailData: popularRecipes[index]),
+                          FoodDetail(detailData: popularRecipes[index],fav:yearFilter),
                     ),
                   );
                 },

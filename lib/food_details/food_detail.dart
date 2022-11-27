@@ -1,8 +1,10 @@
 import 'package:dictionary/data/food_model.dart';
+import 'package:dictionary/data/recipe_data.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
+import 'package:provider/provider.dart';
 
 import 'cooking_details.dart';
 
@@ -10,9 +12,10 @@ import 'ingredients.dart';
 import 'nutrition.dart';
 
 class FoodDetail extends StatefulWidget {
-  const FoodDetail({super.key, required this.detailData});
+  const FoodDetail({super.key, required this.detailData, required this.fav});
 
   final FoodModel detailData;
+  final List fav;
 
   @override
   State<FoodDetail> createState() => _FoodDetailState();
@@ -20,6 +23,7 @@ class FoodDetail extends StatefulWidget {
 
 class _FoodDetailState extends State<FoodDetail> {
   bool _isLiked = false;
+  List<FavoriteModel> listFav = <FavoriteModel>[];
 
   Future<void> share() async {
     await FlutterShare.share(
@@ -29,8 +33,46 @@ class _FoodDetailState extends State<FoodDetail> {
         chooserTitle: 'Example Chooser Title');
   }
 
+  // late SharedPreferences sharedPreferences;
+  //
+  // initSharedPreferences() async {
+  //   sharedPreferences = await SharedPreferences.getInstance();
+  //   getData();
+  // }
+  //
+  // void savedData(bool pressed) {
+  //   Map<String, dynamic> selectedTimes = {
+  //     "ID": widget.detailData.itemIndex,
+  //     "isFavorite": pressed,
+  //     "category": widget.detailData.category,
+  //   };
+  //   var encodedMap = json.encode(selectedTimes);
+  //   print('result $encodedMap');
+  //   sharedPreferences.setString('FavItems', encodedMap);
+  // }
+  //
+  // void getData() async {
+  //   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  //   String? encodedMap = sharedPreferences.getString('FavItems');
+  //   Map<String, dynamic> decodedMap = json.decode(encodedMap!);
+  //   setState(() {});
+  //   print(decodedMap);
+  // }
+
+  @override
+  void initState() {
+    // initSharedPreferences();
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    final f = widget.fav
+        .where((element) => element.itemIndex == widget.detailData.itemIndex)
+        .toList();
+    final z = f.map((e) => e.isFavorite).toList();
+
     return DefaultTabController(
       length: 3,
       initialIndex: 0,
@@ -174,15 +216,60 @@ class _FoodDetailState extends State<FoodDetail> {
               top: 25,
               right: 20,
               child: IconButton(
-                onPressed: () {
+                onPressed: () async {
                   setState(
                     () {
                       _isLiked = !_isLiked;
+
+                      final task = FavoriteModel(
+                        hostedLargeUrl: widget.detailData.hostedLargeUrl,
+                        difficulty: widget.detailData.difficulty,
+                        displayName: widget.detailData.displayName,
+                        isFavorite: _isLiked,
+                        itemIndex: widget.detailData.itemIndex,
+                        totalTime: widget.detailData.totalTime,
+                        category: widget.detailData.category,
+                      );
+
+                      final x = widget.fav
+                          .map((element) => element.itemIndex)
+                          .toList();
+
+                      if (x.isEmpty) {
+                        if (_isLiked == true) {
+                          Provider.of<RecipeData>(context, listen: false)
+                              .addExpenseList(task);
+                        } else {
+                          Provider.of<RecipeData>(context, listen: false)
+                              .deleteExpenseList(widget.detailData.itemIndex);
+                          print('empty');
+                        }
+                      } else if (!x.contains(widget.detailData.itemIndex)) {
+                        if (_isLiked == true) {
+                          Provider.of<RecipeData>(context, listen: false)
+                              .addExpenseList(task);
+                        } else {
+                          Provider.of<RecipeData>(context, listen: false)
+                              .deleteExpenseList(widget.detailData.itemIndex);
+                          print('dont contain');
+                        }
+                      } else if (x.contains(widget.detailData.itemIndex)) {
+                        if (_isLiked == true) {
+                          Provider.of<RecipeData>(context, listen: false)
+                              .deleteExpenseList(widget.detailData.itemIndex);
+                        } else {
+                          Provider.of<RecipeData>(context, listen: false)
+                              .deleteExpenseList(widget.detailData.itemIndex);
+                          print('contain');
+                        }
+                      } else {
+                        return;
+                      }
                     },
                   );
                 },
                 icon: Icon(
-                  _isLiked ? Icons.favorite_border_outlined : Icons.favorite,
+                  _isLiked ? Icons.favorite : Icons.favorite_border_outlined,
                   color: _isLiked ? Colors.amber : Colors.amber,
                   size: 35,
                 ),

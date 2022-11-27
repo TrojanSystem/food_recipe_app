@@ -1,7 +1,9 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:provider/provider.dart';
 
+import '../data/recipe_data.dart';
 import 'food_detail.dart';
 
 class FilterFood extends StatelessWidget {
@@ -20,6 +22,7 @@ class FilterFood extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final yearFilter = Provider.of<RecipeData>(context).expenseList;
     double w = MediaQuery.of(context).size.width;
     int columnCount = 3;
 
@@ -86,10 +89,14 @@ class FilterFood extends StatelessWidget {
                       child: FadeInAnimation(
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
                                 builder: (ctx) => FoodDetail(
-                                      detailData: filteredFoodList[index],
-                                    )));
+                                  detailData: filteredFoodList[index],
+                                  fav: yearFilter,
+                                ),
+                              ),
+                            );
                           },
                           child: Container(
                             margin: EdgeInsets.only(
