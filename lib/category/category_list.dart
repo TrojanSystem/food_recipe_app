@@ -6,8 +6,10 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'category_item.dart';
 
 class CategoryList extends StatefulWidget {
-   CategoryList({required this.categoryList});
-List categoryList;
+  CategoryList({required this.categoryList});
+
+  List categoryList;
+
   @override
   _CategoryListState createState() => _CategoryListState();
 }
@@ -60,21 +62,21 @@ class _CategoryListState extends State<CategoryList> {
 
   @override
   Widget build(BuildContext c) {
-    double w = MediaQuery
-        .of(context)
-        .size
-        .width;
+    double w = MediaQuery.of(context).size.width;
     int columnCount = 2;
 
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-          title: const Text("Food Category"),
+          title: const Text(
+            "Food Category",
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
           backgroundColor: Colors.white,
           elevation: 0,
-          iconTheme: Theme
-              .of(context)
-              .iconTheme,
+          iconTheme: Theme.of(context).iconTheme,
           centerTitle: true,
           brightness: Brightness.dark),
       body: AnimationLimiter(
@@ -85,7 +87,7 @@ class _CategoryListState extends State<CategoryList> {
           crossAxisCount: columnCount,
           children: List.generate(
             categoryItem.length,
-                (int index) {
+            (int index) {
               return AnimationConfiguration.staggeredGrid(
                 position: index,
                 duration: const Duration(milliseconds: 500),
@@ -100,7 +102,7 @@ class _CategoryListState extends State<CategoryList> {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius:
-                        const BorderRadius.all(Radius.circular(20)),
+                            const BorderRadius.all(Radius.circular(20)),
                         boxShadow: [
                           BoxShadow(
                             color: Colors.black.withOpacity(0.1),
@@ -114,12 +116,13 @@ class _CategoryListState extends State<CategoryList> {
                         image: categoryItem[index]['image'],
                         title: categoryItem[index]['title'],
                         navigate: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (ctx) =>FilterFood(
-                              filteringQuery:  categoryItem[index]['title'],
-                              foodList:widget.categoryList,
-                              checkNumber: 1,
-                              identifier: 'category'),));
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (ctx) => FilterFood(
+                                filteringQuery: categoryItem[index]['title'],
+                                foodList: widget.categoryList,
+                                checkNumber: 1,
+                                identifier: 'category'),
+                          ));
                         },
                       ),
                     ),
