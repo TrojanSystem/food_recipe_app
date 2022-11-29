@@ -12,10 +12,11 @@ import 'ingredients.dart';
 import 'nutrition.dart';
 
 class FoodDetail extends StatefulWidget {
-  const FoodDetail({super.key, required this.detailData, required this.fav});
+  const FoodDetail({super.key, required this.detailData, required this.fav,required this.checker});
 
   final FoodModel detailData;
   final List fav;
+  final bool checker;
 
   @override
   State<FoodDetail> createState() => _FoodDetailState();
@@ -32,47 +33,17 @@ class _FoodDetailState extends State<FoodDetail> {
         linkUrl: 'https://flutter.dev/',
         chooserTitle: 'Example Chooser Title');
   }
-
-  // late SharedPreferences sharedPreferences;
-  //
-  // initSharedPreferences() async {
-  //   sharedPreferences = await SharedPreferences.getInstance();
-  //   getData();
-  // }
-  //
-  // void savedData(bool pressed) {
-  //   Map<String, dynamic> selectedTimes = {
-  //     "ID": widget.detailData.itemIndex,
-  //     "isFavorite": pressed,
-  //     "category": widget.detailData.category,
-  //   };
-  //   var encodedMap = json.encode(selectedTimes);
-  //   print('result $encodedMap');
-  //   sharedPreferences.setString('FavItems', encodedMap);
-  // }
-  //
-  // void getData() async {
-  //   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-  //   String? encodedMap = sharedPreferences.getString('FavItems');
-  //   Map<String, dynamic> decodedMap = json.decode(encodedMap!);
-  //   setState(() {});
-  //   print(decodedMap);
-  // }
-
-  @override
+@override
   void initState() {
-    // initSharedPreferences();
-
+   _isLiked = widget.checker;
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    final f = widget.fav
-        .where((element) => element.itemIndex == widget.detailData.itemIndex)
-        .toList();
-    final z = f.map((e) => e.isFavorite).toList();
 
+
+    final x = widget.fav.map((element) => element.itemIndex).toList();
     return DefaultTabController(
       length: 3,
       initialIndex: 0,
@@ -231,10 +202,6 @@ class _FoodDetailState extends State<FoodDetail> {
                         category: widget.detailData.category,
                       );
 
-                      final x = widget.fav
-                          .map((element) => element.itemIndex)
-                          .toList();
-
                       if (x.isEmpty) {
                         if (_isLiked == true) {
                           Provider.of<RecipeData>(context, listen: false)
@@ -242,7 +209,6 @@ class _FoodDetailState extends State<FoodDetail> {
                         } else {
                           Provider.of<RecipeData>(context, listen: false)
                               .deleteExpenseList(widget.detailData.itemIndex);
-                          print('empty');
                         }
                       } else if (!x.contains(widget.detailData.itemIndex)) {
                         if (_isLiked == true) {
@@ -251,7 +217,6 @@ class _FoodDetailState extends State<FoodDetail> {
                         } else {
                           Provider.of<RecipeData>(context, listen: false)
                               .deleteExpenseList(widget.detailData.itemIndex);
-                          print('dont contain');
                         }
                       } else if (x.contains(widget.detailData.itemIndex)) {
                         if (_isLiked == true) {
@@ -260,7 +225,6 @@ class _FoodDetailState extends State<FoodDetail> {
                         } else {
                           Provider.of<RecipeData>(context, listen: false)
                               .deleteExpenseList(widget.detailData.itemIndex);
-                          print('contain');
                         }
                       } else {
                         return;

@@ -90,12 +90,20 @@ class FilterFood extends StatelessWidget {
                         child: GestureDetector(
                           onTap: () {
                             Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (ctx) => FoodDetail(
+                              MaterialPageRoute(builder: (ctx) {
+                                final checker = yearFilter
+                                    .where((element) =>
+                                        element.itemIndex ==
+                                        filteredFoodList[index].itemIndex)
+                                    .toList();
+                                final x = checker.map((e) => e).toList();
+                                return FoodDetail(
+                                  checker:
+                                      x.isEmpty ? false : x.first.isFavorite,
                                   detailData: filteredFoodList[index],
                                   fav: yearFilter,
-                                ),
-                              ),
+                                );
+                              }),
                             );
                           },
                           child: Container(

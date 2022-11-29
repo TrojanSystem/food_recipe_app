@@ -23,6 +23,7 @@ class PopularRecipes extends StatelessWidget {
     popularRecipes.sort(
       (a, b) => b.rating.compareTo(a.rating),
     );
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -48,10 +49,16 @@ class PopularRecipes extends StatelessWidget {
               return GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (ctx) =>
-                          FoodDetail(detailData: popularRecipes[index],fav:yearFilter),
-                    ),
+                    MaterialPageRoute(builder: (ctx) {
+                      final checker = yearFilter
+                          .where((element) =>
+                      element.itemIndex == popularFoodList[index].itemIndex)
+                          .toList();
+                      final x = checker.map((e) => e).toList();
+
+                      return FoodDetail(
+                          detailData: popularRecipes[index], fav: yearFilter,checker:x.isEmpty ? false :x.first.isFavorite);
+                    }),
                   );
                 },
                 child: Stack(
@@ -62,7 +69,8 @@ class PopularRecipes extends StatelessWidget {
                       ),
                       margin: const EdgeInsets.all(6),
                       width: 180,
-                      height: MediaQuery.of(context).size.height,clipBehavior: Clip.antiAlias,
+                      height: MediaQuery.of(context).size.height,
+                      clipBehavior: Clip.antiAlias,
                       child: FancyShimmerImage(
                         imageUrl: popularRecipes[index].hostedLargeUrl,
                         errorWidget: Image.network(
