@@ -10,7 +10,7 @@ import 'bottom_food_list.dart';
 import 'popular_recipes.dart';
 
 class FoodMainScreen extends StatefulWidget {
-  FoodMainScreen({Key? key}) : super(key: key);
+const  FoodMainScreen({Key? key}) : super(key: key);
 
   @override
   State<FoodMainScreen> createState() => _FoodMainScreenState();

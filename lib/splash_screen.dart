@@ -11,7 +11,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
       splash: 'images/hat.png',splashIconSize: 150,
-      nextScreen: FoodMainScreen(),
+      nextScreen: const FoodMainScreen(),
       splashTransition: SplashTransition.rotationTransition,
       pageTransitionType: PageTransitionType.rightToLeftWithFade,
     );
