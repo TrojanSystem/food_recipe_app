@@ -329,6 +329,178 @@ class FoodDataProvider extends ChangeNotifier {
           3: "Low Calorie",
           4: "High Protein"
         }),
+    FoodModel(
+        isFavorite: false,
+        itemIndex: 5,
+        videoUrls:
+        "https://youtu.be/-0MUcIAh3k0",
+        difficulty: "Easy",
+        course: "Main Dishes",
+        category: "Salad",
+        rating: 3.9,
+        totalTime: "25 Min",
+        hostedLargeUrl:
+        "https://hungryhealthyhappy.com/wp-content/uploads/2022/07/mediterranean-rice-salad-featured.jpg",
+        displayName: 'Rice Salad',
+        ingredient: [
+          {
+            'ingredient': "ሩዝ",
+            'unit': 'ግ',
+            'quantity': 200,
+            'wholeLine':
+            "200ግ የተቀቀለ ሩዝ)"
+          },
+          {
+            'ingredient': "እንቁላል",
+            'unit': 'ፍሬ',
+            'quantity': 4,
+            'wholeLine': "4 እንቁላል"
+          },
+          {
+            'ingredient': "ቱና",
+            'unit': 'ግ',
+            'quantity': 150,
+            'wholeLine': "150ግ ቱና"
+          },
+          {
+            'ingredient': "የቆርቆሮ ቦቆሎ",
+            'unit': 'ግማሽ',
+            'quantity': 0.5,
+            'wholeLine': "1/2 የቆርቆሮ ቦቆሎ"
+          },
+          {
+            'ingredient': "የቆርቆሮ አተር",
+            'unit': 'ግማሽ',
+            'quantity': 0.5,
+            'wholeLine': "1/2 የቆርቆሮ አተር"
+          },
+          {
+            'ingredient': "ካሮት",
+            'unit': 'ፍሬ',
+            'quantity': 4,
+            'wholeLine': "4 ፍሬ ካሮት "
+          },
+          {
+            'ingredient': "ፎሶሊያ",
+            'unit': 'ፍሬ',
+            'quantity': 15,
+            'wholeLine': "15 ፍሬ ፎሶሊያ"
+          },
+          {
+            'ingredient': "የሎሚ ጭማቂ",
+            'unit': 'የሾርባ ማንኪያ',
+            'quantity': 5,
+            'wholeLine': "5 የሾርባ ማንኪያ የሎሚ ጭማቂ"
+          }, {
+            'ingredient': "ዘይት",
+            'unit': 'የሾርባ ማንኪያ',
+            'quantity': 5,
+            'wholeLine': "5 የሾርባ ማንኪያ ዘይት"
+          }, {
+            'ingredient': "ጨዉ እና ቁንዶበርበሬ",
+            'unit': 'በመጠኑ',
+            'quantity': 0,
+            'wholeLine': "ጨዉ እና ቁንዶበርበሬ"
+          }
+        ],
+        preparationSteps: {
+          0: "በትልቅ ድስት ሩዙን አጥቦ በግማሽ ሊትር ዉሃ መቀቀል እና ማቀዝቀዝ",
+          1: "እንቁላሉን ቀቅሎ መላጥ እና ማቀዝቀዝ፣ በደቃቁ መክተፍ",
+          2: "ካሮቱን እና ፎሶሊያ ቀቅሎ በደቃቁ መክተፍ",
+          3: "ሩዙን በጎድጓዳ ሰሃን ጨምሮ ተከትፈው ከተዘጋጁት ጋር መቀላቀል",
+          4: "የቆርቆሮዉን በቆሎ እና አተር ቁሃዉን አፍስሶ ሩዝ ዉስጥ መጨመርና መቀላቀል",
+          5: "ቱናዉን ወደ ሩዝ መቀላቀል",
+          6: "ሎሚ ጭማቂ፣ ዘይት፣ ቁንዶበርበሬ ጨምሮ በደንብ ቀላቅሎ ማቅረብ"
+        },
+        description:
+        "This rice salad is adapted from the Italian rice salad and it's the perfect summer dish, easy to prepare in advance, and bring with you for a picnic outdoors.",
+        nutrition: {
+          0: "Low Sugar",
+          1: "Low Fat",
+          2: "High Carb",
+          3: "Low Calorie",
+          4: "High Protein"
+        }),
+    FoodModel(
+        isFavorite: false,
+        itemIndex: 6,
+        videoUrls:
+        "https://gv.yummlystatic.com/c067935f-d557-47a9-b4af-760d1a815302/PmyfziuSPqisUO36HnEA_Montage_Melt_in_Your_Mouth_Baked_Chicken_Breasts/dash.mpd",
+        difficulty: "Easy",
+        course: "Main Dishes",
+        category: "Soup",
+        rating: 3.9,
+        totalTime: "1 hr",
+        hostedLargeUrl:
+        "https://www.primaledgehealth.com/wp-content/uploads/2015/04/recipe-for-fish-stock.jpg",
+        displayName: 'Fish Stock',
+        ingredient: [
+          {
+            'ingredient': "አሳ",
+            'unit': 'ኪሎ',
+            'quantity': 1,
+            'wholeLine':
+            "1ኪሎ አሳ)"
+          },
+          {
+            'ingredient': "የሾርባ ቅጠል",
+            'unit': 'እስር',
+            'quantity': 1,
+            'wholeLine': "1 እስር የሾርባ ቅጠል"
+          },
+          {
+            'ingredient': "ካሮት",
+            'unit': 'ፍሬ',
+            'quantity': 1,
+            'wholeLine': "1 ፍሬ ካሮት"
+          },
+          {
+            'ingredient': "የስጎ ቅጠል",
+            'unit': 'እስር',
+            'quantity': 1,
+            'wholeLine': "1 እስር የስጎ ቅጠል"
+          },
+          {
+            'ingredient': "ድፍን ቁንዶበርበሬ",
+            'unit': 'የሾርባ ማንኪያ',
+            'quantity': 1.5,
+            'wholeLine': "1 1/2 ፍን ቁንዶበርበሬ"
+          },
+          {
+            'ingredient': "ጨው",
+            'unit': 'የሾርባ ማንኪያ',
+            'quantity': 1,
+            'wholeLine': "1 የሾርባ ማንኪያ ጨው"
+          },
+          {
+            'ingredient': "ጦስኝ",
+            'unit': 'የሻይ ማንኪያ',
+            'quantity': 1,
+            'wholeLine': "15 የሻይ ማንኪያ ጦስኝ"
+          },
+          {
+            'ingredient': "ዉሃ",
+            'unit': 'ሊትር',
+            'quantity': 2,
+            'wholeLine': "2 ሊትር ዉሃ"
+          }
+        ],
+        preparationSteps: {
+          0: "አሳዉን በደንብ ማጠብ",
+          1: "አትክልቶቹን ለሁለት ለሁለት መቆራረጥ",
+          2: "በትልቅ ድስት ዉስጥ አሳዉን፣ ከሮቱንና ሊሎቹን አትክልቶች ጦስኝ፣ ቁንዶበርበሬ ጨዉና ውሃ አርጎ ለ 1 hr መቀቀል",
+          3: "ተቀቅሎ ከቀዘቀዘ በኋላ በስጎ ቅጠልና በሾርባ መከለሻ መቀመም",
+
+        },
+        description:
+        "Fish stock (or fumet as it’s known when concentrated) is one of the quickest, freshest, most fragrant stocks out there, and it is of course very resourceful, sustainable and satisfying to get use out of every part of the animal you’re eating.",
+        nutrition: {
+          0: "Low Sugar",
+          1: "Low Fat",
+          2: "Low Carb",
+          3: "Low Calorie",
+          4: "High Protein"
+        }),
   ];
 
 // static Future<List> foodProvider() async {  int login =24;
